@@ -1,0 +1,17 @@
+.primary-header {
+    background-image: url(../img/hero.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: var(--br);
+    padding: 2rem;
+    min-height: 30rem;
+    max-width: 62.5rem;
+
+
+}
+
+.header-inner {
+    display: flex;
+    justify-content: space-between;
+}

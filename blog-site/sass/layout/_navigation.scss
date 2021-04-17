@@ -1,0 +1,7 @@
+.primary-nav {
+    display: flex;
+
+    & > * + * {
+        margin-left: var(--br);
+    }
+}

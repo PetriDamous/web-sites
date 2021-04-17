@@ -8,72 +8,79 @@
   <link
     href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;600&family=IBM+Plex+Serif:wght@200&display=swap"
     rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
   <header class="primary-header">
-    <nav class="primary-navigation">
-      <img class="site-logo" aria-label="site logo" src="./img/logo.svg" alt="">
-      <div class="site-navigation">
-        <a href="#">Home</a>
-        <a href="#">Blog</a>
-      </div>
-    </nav>
+    <div class="header-inner">
+      <a href="index.html"><img class="site-logo" aria-label="site logo" src="./img/logo.svg" alt=""></a>
+      <nav class="primary-nav">
+        <a href="index.html">Home</a>
+        <a href="blog.html">Blog</a>
+      </nav>
+    </div>
   </header>
 
-  <section class="main">
-    <div class="container">
-      <header class="text-serif">
-        <h1></h1>
+  <section class="intro text-serif">
+    <div class="container flow-content">
+      <header>
+        <h1 class="page-title">Lorem ipsum dolor sit amet, consectet adipiscing</h1>
       </header>
-      <p class="sub-title"></p>
-      <a href="#" class="btn btn-secondary">Connect</a>
+      <p class="page-intro">Lorem ipsum dolor sit amet, consectet adipiscing elit, sed do eiusmod tempor incididunt ut
+        labore et dolore magna</p>
+      <a href="#" class="btn btn-primary">Connect</a>
     </div>
   </section>
 
-  <section class="about text-serif">
+  <section class="about text-serif text-500">
     <div class="container">
       <header>
-        <h2>About</h2>
+        <h2 class="section-title">About</h2>
       </header>
-      <p></p>
-      <p></p>
+
+      <div class="flow-content">
+        <p>Lorem ipsum dolor sit amet, consectet adipiscing elit, sed do eiusmod tempor incididunt ut labore dolore magna
+          sed do amet.</p>
+        <p>Lorem ipsum dolor sit amet, consectet adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+          magna. Lorem ipsum dolor sit amet, consectet adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+          dolore magna.</p>
+      </div> 
     </div>
   </section>
 
-  <section class="blog">
-    <div class="container">
+  <section class="recent-articles bg-primary-300">
+    <div class="container flow-content">
       <header>
-        <h2>Blog</h2>
-        <p class="sub-title">Latest thoughts, news and ideas</p>
+        <h2 class="section-title">Blog</h2>
+        <p class="section-subtitle">Latest thoughts, news and ideas</p>
       </header>
   
       <div class="split">
-        <article>
-          <img src="./img/blog-1.jpg" alt="">
-          <h3></h3>
-          <p class="article-preview"></p>
-          <div class="date">
-            <time datetime="2020-10-8"></time>
-            <p class="read">8 min read</p>
+        <article class="article-preview flow-content">
+          <img src="./img/blog-1.jpg" alt="electric drill">
+          <h3>Lorem ipsum dolor sit amet, consectet adipiscing</h3>
+          <p>Lorem ipsum dolor sit amet, consectet adipiscing</p>
+          <div class="article-info">
+            <time datetime="2020-10-8">Oct 8</time>
+            <p>8 min read</p>
           </div>        
         </article>
-        <article>
-          <img src="./img/blog-2.jpg" alt="">
-          <h3></h3>
-          <p class="article-preview"></p>
-          <div class="date">
-            <time datetime="2020-10-8"></time>
-            <p class="read">8 min read</p>
+        <article class="article-preview flow-content">
+          <img src="./img/blog-2.jpg" alt="cactus">
+          <h3>Lorem ipsum dolor sit amet, consectet adipiscing</h3>
+          <p>Lorem ipsum dolor sit amet, consectet adipiscing</p>
+          <div class="article-info">
+            <time datetime="2020-10-8">Oct 8</time>
+            <p>8 min read</p>
           </div>        
         </article>
-        <article>
-          <img src="./img/blog-3.jpg" alt="">
-          <h3></h3>
-          <p class="article-preview"></p>
-          <div class="date">
-            <time datetime="2020-10-8"></time>
-            <p class="read">8 min read</p>
+        <article class="article-preview flow-content">
+          <img src="./img/blog-3.jpg" alt="article-preview">
+          <h3>Lorem ipsum dolor sit amet, consectet adipiscing</h3>
+          <p>Lorem ipsum dolor sit amet, consectet adipiscing</p>
+          <div class="article-info">
+            <time datetime="2020-10-8">Oct 8</time>
+            <p>8 min read</p>
           </div>        
         </article>
       </div>
@@ -81,9 +88,11 @@
   </section>
 
   <section class="cta">
-    <div class="container">
-      <h2>Inbox</h2>
-      <p class="sub-title">Knowledge letters</p>
+    <div class="container flow-content">
+      <header>
+        <h2 class="section-title">Inbox</h2>
+        <p class="section-subtitle">Knowledge letters</p>
+      </header>
       <img src="./img/newsletter.jpg" alt="">
 
       <form action="" class="newsletter">
@@ -95,44 +104,41 @@
           <label for="">Email</label>
           <input type="button" value="">
         </div>
-        <button class="btn btn-primary">Subscribe</button>
+        <button type="submit" class="btn btn-submit">Subscribe</button>
       </form>
     </div>
   </section>
 
   <footer class="primary-footer">
     <div class="container">
-      <div class="footer-inner">
-        <img class="site-logo" aria-label="site logo" src="./img/logo.svg" alt="">
-        <div class="footer-navigation">
-          <dl>
-            <dt>Map</dt>
-            <dd>Blog</dd>
-            <dd>Privacy</dd>
-          </dl>
-          <dl>
-            <dt>Resources</dt>
-            <dd>Courses</dd>
-            <dd>Hacks</dd>
-            <dd>Free stuff</dd>
-          </dl>
-        </div>
+      <div class="primary-footer__inner">
+        <a href="index.html"><img class="site-logo" aria-label="site logo" src="./img/logo.svg" alt=""></a> 
+
+        <dl class="flow-content">          
+          <dt class="text-serif">Map</dt>
+          <dd><a href="blog.html">Blog</a></dd>
+          <dd><a href="#">Privacy</a></dd>
+        </dl>
+        <dl class="flow-content">
+          <dt class="text-serif">Resources</dt>
+          <dd><a href="#">Courses</a></dd>
+          <dd><a href="#">Hacks</a></dd>
+          <dd><a href="#">Free stuff</a></dd>
+        </dl>
       </div>
     </div>
 
-    <div class="footer-bottom split">
-      <p class="copywrite"></p>
+    <div class="text-serif">
+      <p class="copywrite">© 2020 acme. All rights reserved</p>
       <div class="social">
         <ul class="social-list">
-          <li>Yt</li>
-          <li>Tw</li>
-          <li>Fb</li>
-          <li>Li</li>
+          <li><a href="#">Yt</a></li>
+          <li><a href="#">Tw</a></li>
+          <li><a href="#">Fb</a></li>
+          <li><a href="#">Li</a></li>
         </ul>
       </div>
     </div>
   </footer>
-
-
 </body>
 </html>

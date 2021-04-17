@@ -27,3 +27,11 @@
 
   --br: 1rem;
 }
+
+@include respond(40em) {
+  :root {
+    --fs-500: 1.75rem;
+    --fs-600: 2.125rem;
+    --fs-900: 4.25rem;
+  }
+}

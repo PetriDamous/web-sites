@@ -1,0 +1,11 @@
+.social-list {
+    a {
+        color: var(--clr-neutral-500);
+        
+    }
+
+    & a:hover,
+    & a:focus {
+        @extend %hover-focus; 
+    }    
+}
