@@ -1,0 +1,49 @@
+.cta {
+    form {
+        display: flex;
+        flex-direction: column;
+
+        & > * + * {
+            @include margins($top-m: 2rem);
+        }
+
+        & label {
+            @include font($font-w: var(--fw-700), $font-sz: var(--fs-300));
+            display: block;            
+        }
+
+        & div {
+            flex-basis: 100%;
+            flex-grow: 1;
+            flex-shrink: 1;
+        }
+
+        & input {
+            border: none;
+            width: 100%;
+            margin-top: .5rem;
+            border-bottom: 2px solid var(--clr-neutral-300);
+        }
+
+        & input::placeholder {
+            color: var(--clr-neutral-300);
+            opacity: 1;
+        }
+
+        button {
+            align-self: flex-start;
+        }
+
+        @include respond(40em) {
+            flex-direction: row;
+
+            & > * + * {
+                @include margins($top-m: 0, $left-m: 2rem);
+            }
+
+            button {
+                align-self: center;
+            }
+        }
+    }
+}

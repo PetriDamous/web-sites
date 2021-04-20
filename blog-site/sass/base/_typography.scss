@@ -1,13 +1,7 @@
 a {
-    font-weight: var(--fw-700);
-    font-size: var(--fs-300);
+    @include font($font-w: var(--fw-700), $font-sz: var(--fs-300));
     color: var(--clr-neutral-900);
     text-decoration: none;
-
-    &:hover,
-    &:focus {
-        @extend %hover-focus;
-    }
 }
  
 h1,
@@ -43,12 +37,4 @@ dt {
 
 .section-subtitle {
     font-size: var(--fs-600);
-}
-
-.article-info {
-    & time,
-    & p {
-        font-size: var(--fs-200);
-        color: var(--clr-neutral-400);
-    }
 }

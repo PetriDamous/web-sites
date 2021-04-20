@@ -1,3 +1,4 @@
+@charset "UTF-8";
 :root {
   --ff-sans: "IBM Plex Sans", sans-serif;
   --ff-serif: "IBM Plex Serif", serif;
@@ -30,7 +31,7 @@
     --fs-900: 4.25rem;
   }
 }
-.social-list a:hover, .social-list a:focus, a:hover, a:focus {
+.social-list a:hover, .social-list .btn:hover, .social-list a:focus, .social-list .btn:focus, .btn:hover, .btn:focus {
   color: var(--clr-primary-400);
 }
 
@@ -90,12 +91,13 @@ body {
   padding: 1.5rem;
 }
 
-a {
+a, .btn {
   font-weight: var(--fw-700);
   font-size: var(--fs-300);
   color: var(--clr-neutral-900);
   text-decoration: none;
 }
+
 h1,
 h2,
 h3,
@@ -131,11 +133,6 @@ dt {
   font-size: var(--fs-600);
 }
 
-.article-info time, .article-info p {
-  font-size: var(--fs-200);
-  color: var(--clr-neutral-400);
-}
-
 .container {
   max-width: 50rem;
   margin: 0 auto;
@@ -150,7 +147,7 @@ dt {
   flex-direction: column;
 }
 .split > * + * {
-  margin: 4rem 0 0 0;
+  margin: 4rem 0 0;
 }
 .split > * {
   flex-basis: 100%;
@@ -164,11 +161,86 @@ dt {
   }
 }
 
-.btn-primary {
-  display: inline-block;
+.m-xl-space {
+  padding-top: 5rem;
 }
 
-.social-list a {
+.bg-primary-300 {
+  background-color: var(--clr-primary-300);
+  border-radius: var(--br);
+  padding-right: 2rem;
+  padding-left: 2rem;
+}
+
+.btn {
+  display: inline-block;
+  border: none;
+  background-color: transparent;
+}
+.btn::after {
+  content: "›";
+  margin-left: 0.5em;
+}
+.btn:focus {
+  border: 2px solid var(--clr-primary-400);
+}
+.article-preview h3 {
+  font-size: var(--fs-500);
+}
+.article-preview .info {
+  display: flex;
+  font-weight: var(--fw-200);
+  font-size: var(--fs-200);
+  color: var(--clr-neutral-400);
+}
+.article-preview .info > *:first-child {
+  margin-right: 2rem;
+}
+
+.cta form {
+  display: flex;
+  flex-direction: column;
+}
+.cta form > * + * {
+  margin-top: 2rem;
+}
+.cta form label {
+  font-weight: var(--fw-700);
+  font-size: var(--fs-300);
+  display: block;
+}
+.cta form div {
+  flex-basis: 100%;
+  flex-grow: 1;
+  flex-shrink: 1;
+}
+.cta form input {
+  border: none;
+  width: 100%;
+  margin-top: 0.5rem;
+  border-bottom: 2px solid var(--clr-neutral-300);
+}
+.cta form input::placeholder {
+  color: var(--clr-neutral-300);
+  opacity: 1;
+}
+.cta form button {
+  align-self: flex-start;
+}
+@media (min-width: 40em) {
+  .cta form {
+    flex-direction: row;
+  }
+  .cta form > * + * {
+    margin-top: 0;
+    margin-left: 2rem;
+  }
+  .cta form button {
+    align-self: center;
+  }
+}
+
+.social-list a, .social-list .btn {
   color: var(--clr-neutral-500);
 }
 .primary-header {
@@ -201,6 +273,10 @@ section {
   section {
     padding: 3.5rem 0;
   }
+}
+
+.intro {
+  --flow-spacer: 2em;
 }
 
 /*# sourceMappingURL=styles.css.map */

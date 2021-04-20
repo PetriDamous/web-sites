@@ -1,7 +1,25 @@
 %btn {
+    @extend a;
+
     display: inline-block;
+    border: none;
+    background-color: transparent;
+
+    &::after {
+        content: "\203A";
+        @include margins($left-m: .5em);
+    }
+
+    &:focus {
+        border: 2px solid var(--clr-primary-400);
+    }
+
+    &:hover,
+    &:focus {
+        @extend %hover-focus;                
+    }
 }
 
-.btn-primary {
+.btn {
     @extend %btn;
 }

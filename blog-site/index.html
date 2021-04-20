@@ -28,7 +28,7 @@
       </header>
       <p class="page-intro">Lorem ipsum dolor sit amet, consectet adipiscing elit, sed do eiusmod tempor incididunt ut
         labore et dolore magna</p>
-      <a href="#" class="btn btn-primary">Connect</a>
+      <a href="#" class="btn">Connect</a>
     </div>
   </section>
 
@@ -49,18 +49,18 @@
   </section>
 
   <section class="recent-articles bg-primary-300">
-    <div class="container flow-content">
+    <div class="container">
       <header>
         <h2 class="section-title">Blog</h2>
         <p class="section-subtitle">Latest thoughts, news and ideas</p>
       </header>
   
-      <div class="split">
+      <div class="split m-xl-space">
         <article class="article-preview flow-content">
           <img src="./img/blog-1.jpg" alt="electric drill">
           <h3>Lorem ipsum dolor sit amet, consectet adipiscing</h3>
           <p>Lorem ipsum dolor sit amet, consectet adipiscing</p>
-          <div class="article-info">
+          <div class="info">
             <time datetime="2020-10-8">Oct 8</time>
             <p>8 min read</p>
           </div>        
@@ -69,7 +69,7 @@
           <img src="./img/blog-2.jpg" alt="cactus">
           <h3>Lorem ipsum dolor sit amet, consectet adipiscing</h3>
           <p>Lorem ipsum dolor sit amet, consectet adipiscing</p>
-          <div class="article-info">
+          <div class="info">
             <time datetime="2020-10-8">Oct 8</time>
             <p>8 min read</p>
           </div>        
@@ -78,7 +78,7 @@
           <img src="./img/blog-3.jpg" alt="article-preview">
           <h3>Lorem ipsum dolor sit amet, consectet adipiscing</h3>
           <p>Lorem ipsum dolor sit amet, consectet adipiscing</p>
-          <div class="article-info">
+          <div class="info">
             <time datetime="2020-10-8">Oct 8</time>
             <p>8 min read</p>
           </div>        
@@ -93,18 +93,18 @@
         <h2 class="section-title">Inbox</h2>
         <p class="section-subtitle">Knowledge letters</p>
       </header>
-      <img src="./img/newsletter.jpg" alt="">
+      <img class="m-xl-space" src="./img/newsletter.jpg" alt="">
 
       <form action="" class="newsletter">
         <div>
-          <label for="">Name</label>
-          <input type="button" value="">
+          <label for="name">Name</label>
+          <input id="name" name="name" type="text" placeholder="Your Name" value="">
         </div>
         <div>
-          <label for="">Email</label>
-          <input type="button" value="">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="text" placeholder="example@domain.com" value="">
         </div>
-        <button type="submit" class="btn btn-submit">Subscribe</button>
+        <button type="submit" class="btn">Subscribe</button>
       </form>
     </div>
   </section>

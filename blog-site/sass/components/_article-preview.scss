@@ -1,0 +1,15 @@
+.article-preview {
+    h3 {
+        @include font($font-sz: var(--fs-500))
+    }
+
+    .info {
+        display: flex;
+        @include font($font-w: var(--fw-200), $font-sz: var(--fs-200));
+        color: var(--clr-neutral-400);
+
+        & > *:first-child {
+            @include margins($right-m: 2rem);
+        }        
+    }
+}

@@ -4,7 +4,7 @@
 }
 
 .flow-content > * + * {
-    margin-top: var(--flow-spacer, 1em);
+    @include margins(var(--flow-spacer, 1em));
 }
 
 .split {
@@ -12,7 +12,7 @@
     flex-direction: column;
 
     & > * + * {
-        margin: 4rem 0 0 0;
+        @include margins(4rem, 0, 0, 0);
     }
 
     & > * {
@@ -23,7 +23,17 @@
         flex-direction: row;
 
         & > * + * {
-            margin: 0 0 0 2.5rem;
+            @include margins(0, 0, 0, 2.5rem)
         }
     }
+}
+
+.m-xl-space {
+    @include padding(5rem);
+}
+
+.bg-primary-300 {
+    background-color: var(--clr-primary-300);
+    border-radius: var(--br);
+    @include padding($right-p: 2rem, $left-p: 2rem);
 }

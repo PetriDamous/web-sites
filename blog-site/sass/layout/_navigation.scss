@@ -2,6 +2,6 @@
     display: flex;
 
     & > * + * {
-        margin-left: var(--br);
+        @include margins($left-m: var(--br));
     }
 }
