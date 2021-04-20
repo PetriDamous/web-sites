@@ -5,13 +5,54 @@
     background-position: center;
     border-radius: var(--br);
     padding: 2rem;
-    min-height: 30rem;
-    max-width: 62.5rem;
+    min-height: 50vh;
+
+    .primary-nav {
+        @include position($position: fixed, $bottom: .5em, $left: .5em, $right: .5em);
+        display: flex;
+        justify-content: space-around;
+        background-color: var(--clr-neutral-900);
+        border-radius: var(--br);
+        @include padding($top-p: .75em, $bottom-p: .75em);
+
+        a {
+            @include font($font-w: var(--fw-700), $font-sz: var(--fs-300));
+            color: var(--clr-neutral-100);
+            text-decoration: none;
+
+            &:hover,
+            &:focus {
+                color: var(--clr-neutral-300);
+            }
+
+            &:focus {                
+                border: 2px solid var(--clr-neutral-300);
+            }
+        }
+    }
 
 
-}
+    @include respond(40em) {
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+        }
 
-.header-inner {
-    display: flex;
-    justify-content: space-between;
+        .primary-nav {
+            @include position();
+            display: flex;
+            justify-content: space-around;
+            background-color: transparent;
+            border-radius: var(--br);
+            padding: 0;
+    
+            a {
+                @include font($font-w: var(--fw-700), $font-sz: var(--fs-300));
+                color: var(--clr-neutral-900);
+                 
+            }
+        }
+
+        
+    }
 }

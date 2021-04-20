@@ -1,9 +1,11 @@
 %btn {
     @extend a;
+    text-decoration: none;
 
     display: inline-block;
     border: none;
     background-color: transparent;
+
 
     &::after {
         content: "\203A";

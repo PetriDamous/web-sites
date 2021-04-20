@@ -1,7 +1,6 @@
 a {
     @include font($font-w: var(--fw-700), $font-sz: var(--fs-300));
-    color: var(--clr-neutral-900);
-    text-decoration: none;
+    color: var(--clr-neutral-900);    
 }
  
 h1,
