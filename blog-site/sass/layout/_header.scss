@@ -1,8 +1,6 @@
-.primary-header {
-    background-image: url(../img/hero.jpg);
+%header-base {    
     background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
+    background-repeat: no-repeat;    
     border-radius: var(--br);
     padding: 2rem;
     min-height: 50vh;
@@ -31,7 +29,6 @@
         }
     }
 
-
     @include respond(40em) {
         .header-inner {
             display: flex;
@@ -49,10 +46,13 @@
             a {
                 @include font($font-w: var(--fw-700), $font-sz: var(--fs-300));
                 color: var(--clr-neutral-900);
+
+                &:hover,
+                &:focus {
+                    color: var(--clr-neutral-100);
+                }
                  
             }
-        }
-
-        
+        }        
     }
 }

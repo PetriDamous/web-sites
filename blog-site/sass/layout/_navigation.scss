@@ -5,3 +5,24 @@
         @include margins($left-m: var(--br));
     }
 }
+
+.secondary-navigation {
+    display: flex;
+    align-items: center;
+    margin: 2rem 0;
+
+    .categories {
+        display: flex;
+        margin: 0;
+        gap: 1rem;
+
+        button {
+            @extend %btn;
+            @include font($font-sz: var(--fs-300));
+        }
+    }
+
+    & > .btn:last-child {
+        @include margins($left-m: auto);
+    }
+}
