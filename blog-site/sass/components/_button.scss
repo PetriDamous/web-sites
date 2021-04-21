@@ -24,3 +24,12 @@
         @include margins($left-m: .5em);
     }
 }
+
+.btn-back {
+    @extend %btn;
+
+    &::before {
+        content: "\2039";
+        @include margins($right-m: .5em);
+    }
+}

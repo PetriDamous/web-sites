@@ -31,7 +31,7 @@
     --fs-900: 4.25rem;
   }
 }
-.primary-footer .social-list a:hover, .primary-footer .social-list .btn:hover, .primary-footer .social-list a:focus, .primary-footer .social-list .btn:focus, .secondary-navigation .categories button:hover, .btn:hover, .secondary-navigation .categories button:focus, .btn:focus {
+.primary-footer .social-list a:hover, .primary-footer .social-list .btn:hover, .primary-footer .social-list .btn-back:hover, .primary-footer .social-list a:focus, .primary-footer .social-list .btn:focus, .primary-footer .social-list .btn-back:focus, .secondary-navigation .categories button:hover, .btn-back:hover, .btn:hover, .secondary-navigation .categories button:focus, .btn-back:focus, .btn:focus {
   color: var(--clr-primary-400);
 }
 
@@ -92,7 +92,7 @@ body {
   padding: 1.5rem;
 }
 
-a, .secondary-navigation .categories button, .btn {
+a, .secondary-navigation .categories button, .btn-back, .btn {
   font-weight: var(--fw-700);
   font-size: var(--fs-300);
   color: var(--clr-neutral-900);
@@ -102,6 +102,8 @@ h1,
 h2,
 h3,
 .section-subtitle,
+.page-article .article-full h3 + p,
+.page-article .article-full h2,
 .text-serif {
   font-family: var(--ff-serif);
   font-weight: var(--fw-200);
@@ -124,12 +126,12 @@ dt {
   font-size: var(--fs-600);
 }
 
-.section-title {
+.section-title, .page-article .article-full h3 {
   font-size: var(--fs-600);
   color: var(--clr-neutral-400);
 }
 
-.section-subtitle {
+.section-subtitle, .page-article .article-full h3 + p, .page-article .article-full h2 {
   font-size: var(--fs-600);
 }
 
@@ -162,8 +164,8 @@ dt {
   }
 }
 
-.m-xl-space {
-  padding-top: 5rem;
+.m-xl-space, .page-article .article-full h3 {
+  margin-top: 5rem !important;
 }
 
 .bg-primary-300 {
@@ -173,19 +175,24 @@ dt {
   padding-left: 2rem;
 }
 
-.secondary-navigation .categories button, .btn {
+.secondary-navigation .categories button, .btn-back, .btn {
   text-decoration: none;
   display: inline-block;
   border: none;
   background-color: transparent;
   cursor: pointer;
 }
-.secondary-navigation .categories button:focus, .btn:focus {
+.secondary-navigation .categories button:focus, .btn-back:focus, .btn:focus {
   border: 2px solid var(--clr-primary-400);
 }
 .btn::after {
   content: "›";
   margin-left: 0.5em;
+}
+
+.btn-back::before {
+  content: "‹";
+  margin-right: 0.5em;
 }
 
 .article-preview h3 {
@@ -199,6 +206,12 @@ dt {
 }
 .article-preview .info > *:first-child {
   margin-right: 2rem;
+}
+
+.article-full {
+  --flow-spacer: 2.5rem;
+  max-width: 40rem;
+  margin: 0 auto;
 }
 
 .cta form {
@@ -289,7 +302,7 @@ dt {
 .primary-footer .social-list > * + * {
   margin-left: 2em;
 }
-.primary-footer .social-list a, .primary-footer .social-list .secondary-navigation .categories button, .secondary-navigation .categories .primary-footer .social-list button, .primary-footer .social-list .btn {
+.primary-footer .social-list a, .primary-footer .social-list .secondary-navigation .categories button, .secondary-navigation .categories .primary-footer .social-list button, .primary-footer .social-list .btn, .primary-footer .social-list .btn-back {
   color: var(--clr-neutral-500);
 }
 .article-grid {
@@ -325,14 +338,14 @@ dt {
   }
 }
 
-.blog-page .primary-header, .home-page .primary-header {
+.page-article .primary-header, .blog-page .primary-header, .home-page .primary-header {
   background-size: cover;
   background-repeat: no-repeat;
   border-radius: var(--br);
   padding: 2rem;
   min-height: 50vh;
 }
-.blog-page .primary-header .primary-nav, .home-page .primary-header .primary-nav {
+.page-article .primary-header .primary-nav, .blog-page .primary-header .primary-nav, .home-page .primary-header .primary-nav {
   position: fixed;
   bottom: 0.5em;
   left: 0.5em;
@@ -344,24 +357,24 @@ dt {
   padding-top: 0.75em;
   padding-bottom: 0.75em;
 }
-.blog-page .primary-header .primary-nav a, .home-page .primary-header .primary-nav a, .blog-page .primary-header .primary-nav .secondary-navigation .categories button, .home-page .primary-header .primary-nav .secondary-navigation .categories button, .secondary-navigation .categories .blog-page .primary-header .primary-nav button, .blog-page .secondary-navigation .categories .primary-header .primary-nav button, .secondary-navigation .categories .home-page .primary-header .primary-nav button, .home-page .secondary-navigation .categories .primary-header .primary-nav button, .blog-page .primary-header .primary-nav .btn, .home-page .primary-header .primary-nav .btn {
+.page-article .primary-header .primary-nav a, .blog-page .primary-header .primary-nav a, .home-page .primary-header .primary-nav a, .page-article .primary-header .primary-nav .secondary-navigation .categories button, .blog-page .primary-header .primary-nav .secondary-navigation .categories button, .home-page .primary-header .primary-nav .secondary-navigation .categories button, .secondary-navigation .categories .page-article .primary-header .primary-nav button, .page-article .secondary-navigation .categories .primary-header .primary-nav button, .secondary-navigation .categories .blog-page .primary-header .primary-nav button, .blog-page .secondary-navigation .categories .primary-header .primary-nav button, .secondary-navigation .categories .home-page .primary-header .primary-nav button, .home-page .secondary-navigation .categories .primary-header .primary-nav button, .page-article .primary-header .primary-nav .btn, .blog-page .primary-header .primary-nav .btn, .home-page .primary-header .primary-nav .btn, .page-article .primary-header .primary-nav .btn-back, .blog-page .primary-header .primary-nav .btn-back, .home-page .primary-header .primary-nav .btn-back {
   font-weight: var(--fw-700);
   font-size: var(--fs-300);
   color: var(--clr-neutral-100);
   text-decoration: none;
 }
-.blog-page .primary-header .primary-nav a:hover, .home-page .primary-header .primary-nav a:hover, .blog-page .primary-header .primary-nav .secondary-navigation .categories button:hover, .home-page .primary-header .primary-nav .secondary-navigation .categories button:hover, .secondary-navigation .categories .blog-page .primary-header .primary-nav button:hover, .blog-page .secondary-navigation .categories .primary-header .primary-nav button:hover, .secondary-navigation .categories .home-page .primary-header .primary-nav button:hover, .home-page .secondary-navigation .categories .primary-header .primary-nav button:hover, .blog-page .primary-header .primary-nav .btn:hover, .home-page .primary-header .primary-nav .btn:hover, .blog-page .primary-header .primary-nav a:focus, .home-page .primary-header .primary-nav a:focus, .blog-page .primary-header .primary-nav .secondary-navigation .categories button:focus, .home-page .primary-header .primary-nav .secondary-navigation .categories button:focus, .secondary-navigation .categories .blog-page .primary-header .primary-nav button:focus, .blog-page .secondary-navigation .categories .primary-header .primary-nav button:focus, .secondary-navigation .categories .home-page .primary-header .primary-nav button:focus, .home-page .secondary-navigation .categories .primary-header .primary-nav button:focus, .blog-page .primary-header .primary-nav .btn:focus, .home-page .primary-header .primary-nav .btn:focus {
+.page-article .primary-header .primary-nav a:hover, .blog-page .primary-header .primary-nav a:hover, .home-page .primary-header .primary-nav a:hover, .page-article .primary-header .primary-nav .secondary-navigation .categories button:hover, .blog-page .primary-header .primary-nav .secondary-navigation .categories button:hover, .home-page .primary-header .primary-nav .secondary-navigation .categories button:hover, .secondary-navigation .categories .page-article .primary-header .primary-nav button:hover, .page-article .secondary-navigation .categories .primary-header .primary-nav button:hover, .secondary-navigation .categories .blog-page .primary-header .primary-nav button:hover, .blog-page .secondary-navigation .categories .primary-header .primary-nav button:hover, .secondary-navigation .categories .home-page .primary-header .primary-nav button:hover, .home-page .secondary-navigation .categories .primary-header .primary-nav button:hover, .page-article .primary-header .primary-nav .btn:hover, .blog-page .primary-header .primary-nav .btn:hover, .home-page .primary-header .primary-nav .btn:hover, .page-article .primary-header .primary-nav .btn-back:hover, .blog-page .primary-header .primary-nav .btn-back:hover, .home-page .primary-header .primary-nav .btn-back:hover, .page-article .primary-header .primary-nav a:focus, .blog-page .primary-header .primary-nav a:focus, .home-page .primary-header .primary-nav a:focus, .page-article .primary-header .primary-nav .secondary-navigation .categories button:focus, .blog-page .primary-header .primary-nav .secondary-navigation .categories button:focus, .home-page .primary-header .primary-nav .secondary-navigation .categories button:focus, .secondary-navigation .categories .page-article .primary-header .primary-nav button:focus, .page-article .secondary-navigation .categories .primary-header .primary-nav button:focus, .secondary-navigation .categories .blog-page .primary-header .primary-nav button:focus, .blog-page .secondary-navigation .categories .primary-header .primary-nav button:focus, .secondary-navigation .categories .home-page .primary-header .primary-nav button:focus, .home-page .secondary-navigation .categories .primary-header .primary-nav button:focus, .page-article .primary-header .primary-nav .btn:focus, .blog-page .primary-header .primary-nav .btn:focus, .home-page .primary-header .primary-nav .btn:focus, .page-article .primary-header .primary-nav .btn-back:focus, .blog-page .primary-header .primary-nav .btn-back:focus, .home-page .primary-header .primary-nav .btn-back:focus {
   color: var(--clr-neutral-300);
 }
-.blog-page .primary-header .primary-nav a:focus, .home-page .primary-header .primary-nav a:focus, .blog-page .primary-header .primary-nav .secondary-navigation .categories button:focus, .home-page .primary-header .primary-nav .secondary-navigation .categories button:focus, .secondary-navigation .categories .blog-page .primary-header .primary-nav button:focus, .blog-page .secondary-navigation .categories .primary-header .primary-nav button:focus, .secondary-navigation .categories .home-page .primary-header .primary-nav button:focus, .home-page .secondary-navigation .categories .primary-header .primary-nav button:focus, .blog-page .primary-header .primary-nav .btn:focus, .home-page .primary-header .primary-nav .btn:focus {
+.page-article .primary-header .primary-nav a:focus, .blog-page .primary-header .primary-nav a:focus, .home-page .primary-header .primary-nav a:focus, .page-article .primary-header .primary-nav .secondary-navigation .categories button:focus, .blog-page .primary-header .primary-nav .secondary-navigation .categories button:focus, .home-page .primary-header .primary-nav .secondary-navigation .categories button:focus, .secondary-navigation .categories .page-article .primary-header .primary-nav button:focus, .page-article .secondary-navigation .categories .primary-header .primary-nav button:focus, .secondary-navigation .categories .blog-page .primary-header .primary-nav button:focus, .blog-page .secondary-navigation .categories .primary-header .primary-nav button:focus, .secondary-navigation .categories .home-page .primary-header .primary-nav button:focus, .home-page .secondary-navigation .categories .primary-header .primary-nav button:focus, .page-article .primary-header .primary-nav .btn:focus, .blog-page .primary-header .primary-nav .btn:focus, .home-page .primary-header .primary-nav .btn:focus, .page-article .primary-header .primary-nav .btn-back:focus, .blog-page .primary-header .primary-nav .btn-back:focus, .home-page .primary-header .primary-nav .btn-back:focus {
   border: 2px solid var(--clr-neutral-300);
 }
 @media (min-width: 40em) {
-  .blog-page .primary-header .header-inner, .home-page .primary-header .header-inner {
+  .page-article .primary-header .header-inner, .blog-page .primary-header .header-inner, .home-page .primary-header .header-inner {
     display: flex;
     justify-content: space-between;
   }
-  .blog-page .primary-header .primary-nav, .home-page .primary-header .primary-nav {
+  .page-article .primary-header .primary-nav, .blog-page .primary-header .primary-nav, .home-page .primary-header .primary-nav {
     position: static;
     display: flex;
     justify-content: space-around;
@@ -369,12 +382,12 @@ dt {
     border-radius: var(--br);
     padding: 0;
   }
-  .blog-page .primary-header .primary-nav a, .home-page .primary-header .primary-nav a, .blog-page .primary-header .primary-nav .secondary-navigation .categories button, .home-page .primary-header .primary-nav .secondary-navigation .categories button, .secondary-navigation .categories .blog-page .primary-header .primary-nav button, .blog-page .secondary-navigation .categories .primary-header .primary-nav button, .secondary-navigation .categories .home-page .primary-header .primary-nav button, .home-page .secondary-navigation .categories .primary-header .primary-nav button, .blog-page .primary-header .primary-nav .btn, .home-page .primary-header .primary-nav .btn {
+  .page-article .primary-header .primary-nav a, .blog-page .primary-header .primary-nav a, .home-page .primary-header .primary-nav a, .page-article .primary-header .primary-nav .secondary-navigation .categories button, .blog-page .primary-header .primary-nav .secondary-navigation .categories button, .home-page .primary-header .primary-nav .secondary-navigation .categories button, .secondary-navigation .categories .page-article .primary-header .primary-nav button, .page-article .secondary-navigation .categories .primary-header .primary-nav button, .secondary-navigation .categories .blog-page .primary-header .primary-nav button, .blog-page .secondary-navigation .categories .primary-header .primary-nav button, .secondary-navigation .categories .home-page .primary-header .primary-nav button, .home-page .secondary-navigation .categories .primary-header .primary-nav button, .page-article .primary-header .primary-nav .btn, .blog-page .primary-header .primary-nav .btn, .home-page .primary-header .primary-nav .btn, .page-article .primary-header .primary-nav .btn-back, .blog-page .primary-header .primary-nav .btn-back, .home-page .primary-header .primary-nav .btn-back {
     font-weight: var(--fw-700);
     font-size: var(--fs-300);
     color: var(--clr-neutral-900);
   }
-  .blog-page .primary-header .primary-nav a:hover, .home-page .primary-header .primary-nav a:hover, .blog-page .primary-header .primary-nav .secondary-navigation .categories button:hover, .home-page .primary-header .primary-nav .secondary-navigation .categories button:hover, .secondary-navigation .categories .blog-page .primary-header .primary-nav button:hover, .blog-page .secondary-navigation .categories .primary-header .primary-nav button:hover, .secondary-navigation .categories .home-page .primary-header .primary-nav button:hover, .home-page .secondary-navigation .categories .primary-header .primary-nav button:hover, .blog-page .primary-header .primary-nav .btn:hover, .home-page .primary-header .primary-nav .btn:hover, .blog-page .primary-header .primary-nav a:focus, .home-page .primary-header .primary-nav a:focus, .blog-page .primary-header .primary-nav .secondary-navigation .categories button:focus, .home-page .primary-header .primary-nav .secondary-navigation .categories button:focus, .secondary-navigation .categories .blog-page .primary-header .primary-nav button:focus, .blog-page .secondary-navigation .categories .primary-header .primary-nav button:focus, .secondary-navigation .categories .home-page .primary-header .primary-nav button:focus, .home-page .secondary-navigation .categories .primary-header .primary-nav button:focus, .blog-page .primary-header .primary-nav .btn:focus, .home-page .primary-header .primary-nav .btn:focus {
+  .page-article .primary-header .primary-nav a:hover, .blog-page .primary-header .primary-nav a:hover, .home-page .primary-header .primary-nav a:hover, .page-article .primary-header .primary-nav .secondary-navigation .categories button:hover, .blog-page .primary-header .primary-nav .secondary-navigation .categories button:hover, .home-page .primary-header .primary-nav .secondary-navigation .categories button:hover, .secondary-navigation .categories .page-article .primary-header .primary-nav button:hover, .page-article .secondary-navigation .categories .primary-header .primary-nav button:hover, .secondary-navigation .categories .blog-page .primary-header .primary-nav button:hover, .blog-page .secondary-navigation .categories .primary-header .primary-nav button:hover, .secondary-navigation .categories .home-page .primary-header .primary-nav button:hover, .home-page .secondary-navigation .categories .primary-header .primary-nav button:hover, .page-article .primary-header .primary-nav .btn:hover, .blog-page .primary-header .primary-nav .btn:hover, .home-page .primary-header .primary-nav .btn:hover, .page-article .primary-header .primary-nav .btn-back:hover, .blog-page .primary-header .primary-nav .btn-back:hover, .home-page .primary-header .primary-nav .btn-back:hover, .page-article .primary-header .primary-nav a:focus, .blog-page .primary-header .primary-nav a:focus, .home-page .primary-header .primary-nav a:focus, .page-article .primary-header .primary-nav .secondary-navigation .categories button:focus, .blog-page .primary-header .primary-nav .secondary-navigation .categories button:focus, .home-page .primary-header .primary-nav .secondary-navigation .categories button:focus, .secondary-navigation .categories .page-article .primary-header .primary-nav button:focus, .page-article .secondary-navigation .categories .primary-header .primary-nav button:focus, .secondary-navigation .categories .blog-page .primary-header .primary-nav button:focus, .blog-page .secondary-navigation .categories .primary-header .primary-nav button:focus, .secondary-navigation .categories .home-page .primary-header .primary-nav button:focus, .home-page .secondary-navigation .categories .primary-header .primary-nav button:focus, .page-article .primary-header .primary-nav .btn:focus, .blog-page .primary-header .primary-nav .btn:focus, .home-page .primary-header .primary-nav .btn:focus, .page-article .primary-header .primary-nav .btn-back:focus, .blog-page .primary-header .primary-nav .btn-back:focus, .home-page .primary-header .primary-nav .btn-back:focus {
     color: var(--clr-neutral-100);
   }
 }
@@ -432,6 +445,36 @@ section {
 }
 .blog-page .primary-header .container > h1 {
   width: 12ch;
+}
+
+.page-article .primary-header {
+  background-image: url(../img/article.jpg);
+  background-position: left center;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+  z-index: 0;
+}
+.page-article .primary-header::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: -1;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.45), rgba(255, 255, 255, 0));
+}
+.page-article .primary-header .container {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+.page-article .primary-header .container > h1 {
+  width: 12ch;
+}
+.page-article .article-full h3 + p {
+  margin-top: 0;
 }
 
 /*# sourceMappingURL=styles.css.map */

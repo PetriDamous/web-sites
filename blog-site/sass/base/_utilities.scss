@@ -30,7 +30,7 @@
 }
 
 .m-xl-space {
-    @include padding(5rem);
+    margin-top: 5rem !important;
 }
 
 .bg-primary-300 {
