@@ -1,0 +1,52 @@
+.page-article {
+    .primary-header {
+        @extend %header-base;
+        background-image: url(../img/article.jpg);
+        background-position: left center;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;        
+        @include position(relative);
+        z-index: 0;
+
+        &::after {
+            content: "";
+            @include position(absolute, 0, 0, 0, 0);
+            z-index: -1;
+            background: linear-gradient(
+                90deg,
+                rgba(255, 255, 255, .45),
+                rgba(255, 255, 255, 0)
+            );
+
+        }
+
+        .container {
+            @include margins($top-m: auto, $bottom-m: auto);
+
+            & > h1 {
+                width: 12ch;
+            }
+        }
+    }
+
+    .article-full {
+        h2 {
+            @extend .section-subtitle;
+        }
+
+        h3 {
+            @extend .section-title;
+            @extend .m-xl-space;
+
+            & + p {
+                @extend .section-subtitle;
+                @include margins(0);
+            }
+        }
+
+        p {
+
+        }
+    }
+}

@@ -1,0 +1,17 @@
+.blog-page {
+    .primary-header {
+        @extend %header-base;
+        background-image: url(../img/blog.jpg);
+        background-position: left center;
+        display: flex;
+        flex-direction: column;
+
+        .container {
+            @include margins($top-m: auto, $bottom-m: auto);
+
+            & > h1 {
+                width: 12ch;
+            }
+        }
+    }
+}

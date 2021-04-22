@@ -1,0 +1,35 @@
+%btn {
+    @extend a;
+    text-decoration: none;
+    display: inline-block;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+
+    &:focus {
+        border: 2px solid var(--clr-primary-400);
+    }
+
+    &:hover,
+    &:focus {
+        @extend %hover-focus;                
+    }
+}
+
+.btn {
+    @extend %btn;
+
+    &::after {
+        content: "\203A";
+        @include margins($left-m: .5em);
+    }
+}
+
+.btn-back {
+    @extend %btn;
+
+    &::before {
+        content: "\2039";
+        @include margins($right-m: .5em);
+    }
+}

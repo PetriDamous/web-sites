@@ -1,0 +1,11 @@
+.home-page {
+    .primary-header {
+        @extend %header-base;
+        background-image: url(../img/hero.jpg);
+        background-position: center center;
+    }
+
+    .intro {
+        --flow-spacer: 2em;
+    }
+}

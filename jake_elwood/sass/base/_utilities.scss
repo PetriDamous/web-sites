@@ -1,0 +1,17 @@
+.container {
+    max-width: 50rem;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.flow-content > * + * {
+    @include margins(var(--flow-spacer, 1em));
+}
+
+.split {
+    @include split();
+}
+
+.m-xl-space {
+    margin-top: 5rem !important;
+}
