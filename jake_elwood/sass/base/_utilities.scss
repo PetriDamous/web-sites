@@ -2,6 +2,7 @@
     max-width: 50rem;
     width: 100%;
     margin: 0 auto;
+    @include padding($right-p: 1.5rem, $left-p: 1.5rem);
 }
 
 .flow-content > * + * {

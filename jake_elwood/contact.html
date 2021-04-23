@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,21 +10,38 @@
 </head>
 <body class="contact-page">
   <header class="primary-header">
-    <nav class="site-nav">
-      <a href="index.html" class="logo-nav">Jake&Elwood</a>
+    <a href="index.html" class="logo-nav">Jake&Elwood</a>
+    <nav class="site-nav">      
       <a href="index.html">home</a>
       <a href="about.html">about us</a>
       <a href="#" class="active">contact</a>
     </nav>
-
-    <div class="cta">
-      <h1 class="">The only marketing agency on <span class="txt-highlight">a mission from God,</span> fully dedicated to increase your web traffic.</h1>
-      <p>We’re two brothers from Chicago that are trying to pay back our debt. We can help you with <span class="bold-inverse">SEO, SEM content marketing</span> and whatever else.</p>
-      <a class="btn" href="contact.html">contact us</a>
-    </div>
   </header>
 
+  <section class="page-intro">
+    <div class="page-intro__section">
+      <h1 class="highlight-header">Contact.</h1>
+      <p class="divider-secondary">Let us know how we can help you need and we’ll drive over to your place in our Bluesmobile the following day to discuss the deal.</p>
+    </div>
+  </section>
 
+  <section class="contact split">
+    <div class="contact__instructions">
+      <img src="img/contact.jpg" alt="picture of plants and mail boxes" class="img-layers">
+      <h2 class="divider-primary">Getting in touch with us</h2>
+      <p>You can either use the form or <span class="bold"><a href="#">send us an email</a></span>. I'll get back in touch with you as soon as possible!</p>
+    </div>
+
+    <form action="" class="contact__form">
+      <label for="name">Name</label>
+      <input id="name" type="text" name="name" placeholder="Your Name">
+      <label for="email">Email</label>
+      <input id="email" type="text" name="email" placeholder="example@domain.com">
+      <label for="message">Message</label>
+      <textarea id="message" name="" id="" cols="30" rows="5"></textarea>
+      <submit class="btn">send</submit>
+    </form>
+  </section>
 
   <footer class="footer">
     <div class="footer__info">
