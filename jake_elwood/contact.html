@@ -10,7 +10,7 @@
 </head>
 <body class="contact-page">
   <header class="primary-header">
-    <a href="index.html" class="logo-nav">Jake&Elwood</a>
+    <a href="index.html" class="logo">Jake&Elwood</a>
     <nav class="site-nav">      
       <a href="index.html">home</a>
       <a href="about.html">about us</a>
@@ -19,36 +19,71 @@
   </header>
 
   <section class="page-intro">
-    <div class="page-intro__section">
+    <div class="container flow-content">
       <h1 class="highlight-header">Contact.</h1>
-      <p class="divider-secondary">Let us know how we can help you need and we’ll drive over to your place in our Bluesmobile the following day to discuss the deal.</p>
-    </div>
+      <p>Let us know how we can help you need and we’ll drive over to your place in our Bluesmobile the following day to discuss the deal.</p>
+      <div class="divider"></div>    
+    </div>    
   </section>
 
-  <section class="contact split">
-    <div class="contact__instructions">
-      <img src="img/contact.jpg" alt="picture of plants and mail boxes" class="img-layers">
-      <h2 class="divider-primary">Getting in touch with us</h2>
-      <p>You can either use the form or <span class="bold"><a href="#">send us an email</a></span>. I'll get back in touch with you as soon as possible!</p>
-    </div>
+  <section class="contact">
+    <div class="container split">
+      <div class="contact__instructions flow-content">
+        <img src="img/contact.jpg" alt="picture of plants and mail boxes" class="img-layers">
+        
 
-    <form action="" class="contact__form">
-      <label for="name">Name</label>
-      <input id="name" type="text" name="name" placeholder="Your Name">
-      <label for="email">Email</label>
-      <input id="email" type="text" name="email" placeholder="example@domain.com">
-      <label for="message">Message</label>
-      <textarea id="message" name="" id="" cols="30" rows="5"></textarea>
-      <submit class="btn">send</submit>
-    </form>
+        <h2 class="divider">Getting in touch with us</h2>
+        <p>You can either use the form or <span class="bold"><a href="#">send us an email</a></span>. I'll get back in touch with you as soon as possible!</p>        
+      </div>
+  
+      <form action="" class="form flow-content"> 
+
+        <div class="form__user-info">
+          <div>
+            <label for="name">Name</label>
+            <input id="name" type="text" name="name" placeholder="Your Name">
+          </div>
+          <div>
+            <label for="email">Email</label>
+            <input id="email" type="text" name="email" placeholder="example@domain.com">
+          </div>
+        </div>
+
+        <div class="form__message">
+          <div>
+            <label for="message">Message</label>
+            <textarea id="message" name="message" cols="30" rows="10" placeholder="Message goes here."></textarea>
+          </div>
+          <submit class="btn">send</submit>
+        </div>
+
+
+      </form>
+    </div>
   </section>
 
   <footer class="footer">
-    <div class="footer__info">
-      <h2 class="logo-inverse">Jake&Elwood</h2>
-      <p>Two brothers from Chicago that are just trying to pay back their debt by helping others with their SEO, SEM, and Content Marketing needs.</p>
+    <div class="container">
+      <div class="footer__inner">
+        <div class="footer__info flow-content">
+          <a class="logo" href="index.html">Jake&Elwood</a>
+          <p>Two brothers from Chicago that are just trying to pay back their debt by helping others with their SEO, SEM, and Content Marketing needs.</p>
+        </div>
+        <div class="social">
+          <a href="https://www.facebook.com/">
+            <img src="img/facebook.svg" alt="">
+          </a>
+          <a href="https://twitter.com/?lang=en">
+            <img src="img/twitter.svg" alt="">
+          </a>
+          <a href="https://www.instagram.com/">
+            <img src="img/instagram.svg" alt="">
+          </a>
+        </div>
+      </div>
+
+      <p class="copywrite m-md-space">© Jack&Elwood 2021</p>
     </div>
-    <div class="social"></div>
   </footer>
 </body>
 

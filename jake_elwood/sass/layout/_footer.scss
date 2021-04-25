@@ -1,65 +1,70 @@
-.primary-footer {
-    
-    &__inner {
-        --border: 2px solid var(--clr-neutral-300);
-        border-top: var(--border);
-        border-bottom: var(--border);
-        @include padding($top-p: 3rem, $bottom-p: 3rem);
-    }
+.footer {
+    @include padding($top-p: 3rem, $bottom-p: 3rem);
+    background-color: var(--clr-neutral-200);
+    color: var(--clr-neutral-300);
+    font-weight: var(--fw-700);
+    text-align: center;    
 
-    .footer-nav {
+    .footer__inner {
         display: flex;
         flex-direction: column;
 
-        & > * + *{
-            @include margins($top-m: 4rem);
+        & > *:first-child {
+            @include margins(3rem, 0, 0, 0);
         }
 
-        @include respond(40em) {
-            flex-direction: row;
+        .logo {
+            --logo-size: var(--fs-600);
+            --logo-clr: var(--clr-neutral-300);
+            
+            @include respond(20.5em) {
+                --logo-size: var(--fs-900);
+            }
+
+            @include respond(25.625em) {
+                --logo-size: var(--fs-700);
+            }
+        }
+
+        .footer__info {
+            order: 1;
+            max-width: 40rem;
+        }
+
+        .social {
+            order: 0;
+            display: flex;
+
+            align-self: center;
 
             & > * + * {
-                @include margins($top-m: 0, $left-m: 4rem);
+                margin-left: 1.5rem;
             }
-            
+
+            img {
+                object-fit: cover;
+                object-position: center;
+                height: 2.5rem;
+            }
         }
-        
     }
 
+    @include respond(50em) {
+        text-align: left;
 
-    .footer-bottom {
-        display: flex;
-        flex-direction: column-reverse;
-
-        & > * {
-            @include margins($top-m: 2rem);
-        }
-
-        @include respond(40em) {
+        .footer__inner {
             flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
 
-            & > * {
-                @include margins($top-m: 0, $right-m: 4rem);
+            .footer__info {
+                order: 0;
+                width: 60%;                
+            }
+
+            & > *:first-child {
+                @include margins(0, 0, 0, 0);
             }
         }
     }
-
-    .social-list {       
-        display: flex;
-
-        & > * + * {
-            @include margins($left-m: 2em);
-        }
-
-        a {
-            color: var(--clr-neutral-500);        
-        }
-    
-        & a:hover,
-        & a:focus {
-            @extend %hover-focus; 
-        }    
-    }
-
 }
-

@@ -142,3 +142,35 @@
         }
     }
 }
+
+// Creates pseudo bottom border element
+@mixin divider (
+    $position: center,
+    $top-position: 1.5em,
+    $border-width: 2.5px,
+    $border-style: solid,
+    $border-color: inherit,
+    $border-length: 3.5em,
+
+) {
+    position: relative;
+
+    &::after {
+        content: "";
+        border-bottom: $border-width $border-style $border-color;
+        width: $border-length;
+
+        @debug $position;
+
+        @if ($position == left) {
+            @include position($position: absolute, $top: 1.5em, $left: 0);
+            transform: translate(0,0);
+        } @else if ($position == center) {            
+            @include position($position: absolute, $top: 1.5em, $left: 50%);
+            transform: translate(-50%,0);            
+        } @else if ($position == right) {
+            @include position($position: absolute, $top: 1.5em, $left: 100%);
+            transform: translate(-100%,0);
+        }
+    }
+}

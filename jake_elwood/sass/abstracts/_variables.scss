@@ -24,6 +24,7 @@
   --clr-neutral-500: #434956;
   --clr-neutral-900: #020203;
 
+  --clr-primary-200: #F0E68C;
   --clr-primary-300: #ffff00;
   --clr-primary-400: #ffee00;
 
@@ -31,12 +32,14 @@
 }
 
 // Responsive fonts
-@include respond(40em) {
-  :root {
-    --fs-500: 1.75rem;
-    --fs-600: 2.125rem;
-    --fs-900: 4.25rem;
-  }
-}
+// @include respond(40em) {
+//   :root {
+//     --fs-500: 1.75rem;
+//     --fs-600: 2.125rem;
+//     --fs-900: 4.25rem;
+//   }
+// }
+
+
 
 // breakpoints
