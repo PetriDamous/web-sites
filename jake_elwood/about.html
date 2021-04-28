@@ -8,15 +8,20 @@
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet"> 
   <link rel="stylesheet" href="css/styles.css">
+  <script src="./js/index.js" defer></script>
 </head>
 <body class="about-page">
   <header class="primary-header">
-    <a href="index.html" class="logo">Jake&Elwood</a>
-    <nav class="site-nav">      
-      <a href="index.html">home</a>
-      <a href="#" class="active">about us</a>
-      <a href="contact.html">contact</a>
-    </nav>
+    <div class="container">
+      <a href="index.html" class="logo">Jake&Elwood</a>
+      <button id="open-nav" class="open-nav">&#9776;</button>      
+      <nav class="nav">
+        <button id="close-nav" class="close-nav">&times;</button>  
+          <a href="#" class="active">home</a>
+          <a href="about.html">about us</a>
+          <a href="contact.html">contact</a>
+      </nav>
+    </div>
   </header>
 
   <section class="page-intro">

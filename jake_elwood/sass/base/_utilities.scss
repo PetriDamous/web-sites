@@ -1,5 +1,5 @@
 .container {
-    max-width: 60rem;
+    max-width: 62.5rem;
     width: 90%;
     margin: 0 auto;
     @include padding($right-p: 1.5rem, $left-p: 1.5rem);
@@ -40,4 +40,8 @@
         border-bottom: var(--divider-width, 2.5px) var(--divider-style, solid) var(--divider-color, --clr-primary-400);
         width: var(--divider-length, 3.5em);
     }
+}
+
+.open-navigation {
+    transform: translateX(0) !important;    
 }

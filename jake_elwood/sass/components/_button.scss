@@ -22,3 +22,21 @@
 .btn {
     @extend %btn;
 }
+
+%nav-btn {
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+}
+
+.close-nav {
+    @extend %nav-btn;
+    font-size: var(--close-fz, 5rem);
+    color: var(--close-clr, var(--clr-primary-400));
+}
+
+.open-nav {
+    @extend %nav-btn;
+    font-size: var(--open-nav-fz, 2rem);
+    color: var(--open-nav-clr, var(--clr-primary-400));
+}

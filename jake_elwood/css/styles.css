@@ -107,7 +107,7 @@ nav a,
 }
 
 .container {
-  max-width: 60rem;
+  max-width: 62.5rem;
   width: 90%;
   margin: 0 auto;
   padding-right: 1.5rem;
@@ -166,6 +166,10 @@ nav a,
   width: var(--divider-length, 3.5em);
 }
 
+.open-navigation {
+  transform: translateX(0) !important;
+}
+
 .btn {
   text-decoration: none;
   display: inline-block;
@@ -177,6 +181,22 @@ nav a,
 }
 .btn:hover, .btn:focus {
   background-color: var(--clr-primary-200);
+}
+
+.open-nav, .close-nav {
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+}
+
+.close-nav {
+  font-size: var(--close-fz, 5rem);
+  color: var(--close-clr, var(--clr-primary-400));
+}
+
+.open-nav {
+  font-size: var(--open-nav-fz, 2rem);
+  color: var(--open-nav-clr, var(--clr-primary-400));
 }
 
 .form {
@@ -192,12 +212,16 @@ nav a,
   display: flex;
   flex-direction: column;
 }
+.form__user-info > * + * {
+  margin: 1rem 0 0;
+}
 .form__user-info > * {
   width: 100%;
 }
 .form__user-info input {
   width: 100%;
   padding: 0.5rem;
+  font-size: var(--fs-250);
 }
 .form__message {
   display: flex;
@@ -207,13 +231,15 @@ nav a,
   margin: 1rem 0 0;
 }
 .form__message textarea {
+  padding: 0.5rem;
   width: 100%;
   min-height: 6rem;
+  font-size: var(--fs-250);
 }
 .form__message submit {
   align-self: flex-end;
 }
-@media (min-width: 56.25em) {
+@media (min-width: 58.9375em) {
   .form__user-info {
     flex-direction: row;
   }
@@ -303,33 +329,93 @@ nav a,
 }
 
 .primary-header {
+  --open-nav-fz: 2rem;
+  --open-nav-clr: var(--clr-neutral-100);
+  --logo-size: var(--fs-400);
   background-color: var(--clr-neutral-900);
 }
 .primary-header .container {
   display: flex;
+  justify-content: space-between;
   align-items: center;
 }
-.primary-header .container > * + * {
-  margin-left: 2rem;
+.primary-header .container > *:first-child {
+  margin-right: 2rem;
 }
 .primary-header .logo {
-  --logo-size: var(--fs-600);
   text-decoration: none;
   background-color: var(--clr-primary-300);
   padding-top: 3rem;
   padding-right: 0.5rem;
   padding-left: 0.5rem;
 }
-
-.site-nav {
-  display: flex;
+@media (min-width: 21.875em) {
+  .primary-header {
+    --logo-size: var(--fs-600);
+  }
 }
-.site-nav a, .site-nav .btn {
+@media (min-width: 38.625em) {
+  .primary-header .container {
+    justify-self: unset;
+  }
+  .primary-header .open-nav {
+    display: none;
+  }
+  .primary-header .logo {
+    --logo-size: var(--fs-600);
+  }
+}
+
+.nav {
+  --close-position: absolute;
+  --close-top: 0;
+  --close-left: 1.5rem;
+  --close-fz: 5rem;
+  --close-clr: var(--clr-primary-400);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  min-height: 100vh;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 2;
+  background-color: var(--clr-neutral-900);
+  transform: translateX(-100%);
+  transition: 250ms;
+}
+.nav .close-nav {
+  position: var(--close-position);
+  top: var(--close-top);
+  left: var(--close-left);
+}
+.nav > a, .nav > .btn {
+  font-size: var(--fs-600);
   color: white;
   text-decoration: none;
 }
-.site-nav > * + * {
-  margin-left: 2rem;
+.nav > a:hover, .nav > .btn:hover, .nav > a:focus, .nav > .btn:focus {
+  color: var(--clr-primary-400);
+}
+@media (min-width: 38.625em) {
+  .nav {
+    flex-direction: row;
+    min-height: min-content;
+    position: static;
+    transform: translateX(0);
+    justify-content: unset;
+  }
+  .nav .close-nav {
+    display: none;
+  }
+  .nav > a, .nav > .btn {
+    font-size: var(--fs-250);
+  }
+  .nav > * + * {
+    margin-left: 2rem;
+  }
 }
 
 section {
@@ -395,6 +481,44 @@ section {
   text-align: center;
 }
 
+.contact {
+  --divider-top: -0.5em;
+  --divider-left: 0;
+  --divider-translate: 0;
+  --divider-width: 2.5px;
+  --divider-style: solid;
+  --divider-color: var(--clr-primary-400);
+  --divider-length: 3.5em;
+}
+.contact .stack {
+  position: relative;
+}
+.contact .stack::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  transform: translate(-2rem, -2rem);
+}
+.contact .split {
+  display: flex;
+  flex-direction: column;
+}
+.contact .split > * + * {
+  margin: 4rem 0 0;
+}
+.contact .split > * {
+  flex-basis: 100%;
+}
+@media (min-width: 40em) {
+  .contact .split {
+    flex-direction: row;
+  }
+  .contact .split > * + * {
+    margin: 0 0 0 2.5rem;
+  }
+}
 .contact__instructions {
   flex-basis: 60%;
 }

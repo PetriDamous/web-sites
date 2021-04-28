@@ -1,19 +1,42 @@
 .primary-header {
+    --open-nav-fz: 2rem;
+    --open-nav-clr: var(--clr-neutral-100);
+    --logo-size: var(--fs-400);
+
     background-color: var(--clr-neutral-900);
 
     .container {
         display: flex;
+        justify-content: space-between;
         align-items: center;
 
-        & > * + * {
-            @include margins($left-m: 2rem);
+        & > *:first-child {
+            @include margins($right-m: 2rem);
         }
     }
 
-    .logo {
-        --logo-size: var(--fs-600);
+    .logo {        
         text-decoration: none;
         background-color: var(--clr-primary-300);
         @include padding($top-p: 3rem, $left-p: .5rem, $right-p: .5rem);
+    }
+
+    @include respond(21.875em) {
+        --logo-size: var(--fs-600);
+
+    }
+
+    @include respond(38.625em) {
+        .container {
+            justify-self: unset;
+        }
+
+        .open-nav {
+            display: none;
+        }
+
+        .logo {
+            --logo-size: var(--fs-600);
+        }
     }
 }

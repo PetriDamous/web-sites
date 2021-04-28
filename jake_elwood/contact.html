@@ -7,15 +7,20 @@
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet"> 
   <link rel="stylesheet" href="css/styles.css">
+  <script src="./js/index.js" defer></script>
 </head>
 <body class="contact-page">
   <header class="primary-header">
-    <a href="index.html" class="logo">Jake&Elwood</a>
-    <nav class="site-nav">      
-      <a href="index.html">home</a>
-      <a href="about.html">about us</a>
-      <a href="#" class="active">contact</a>
-    </nav>
+    <div class="container">
+      <a href="index.html" class="logo">Jake&Elwood</a>
+      <button id="open-nav" class="open-nav">&#9776;</button>      
+      <nav class="nav">
+        <button id="close-nav" class="close-nav">&times;</button>  
+          <a href="#" class="active">home</a>
+          <a href="about.html">about us</a>
+          <a href="contact.html">contact</a>
+      </nav>
+    </div>
   </header>
 
   <section class="page-intro">
@@ -29,10 +34,12 @@
   <section class="contact">
     <div class="container split">
       <div class="contact__instructions flow-content">
-        <img src="img/contact.jpg" alt="picture of plants and mail boxes" class="img-layers">
-        
-
-        <h2 class="divider">Getting in touch with us</h2>
+        <div class="stack">
+          <img src="img/contact.jpg" alt="picture of plants and mail boxes" class="img-layers">  
+        </div>
+  
+        <h2>Getting in touch with us</h2>
+        <div class="divider"></div>
         <p>You can either use the form or <span class="bold"><a href="#">send us an email</a></span>. I'll get back in touch with you as soon as possible!</p>        
       </div>
   
