@@ -1,0 +1,42 @@
+%btn {
+    $button-padding: (
+        "top-bottom-p": .75em,
+        "right-left-p": 1em
+    );
+
+    @extend a;
+    text-decoration: none;
+    display: inline-block;
+    border: none;
+    background-color: var(--clr-primary-400);
+    cursor: pointer;
+    font-size: var(--fs-250);
+    @include padding($top-p: map-get($button-padding, "top-bottom-p"),$bottom-p: map-get($button-padding, "top-bottom-p"),$right-p: map-get($button-padding, "right-left-p"),$left-p: map-get($button-padding, "right-left-p"));
+
+    &:hover,
+    &:focus {
+        background-color: var(--clr-primary-200);
+    }
+}
+
+.btn {
+    @extend %btn;
+}
+
+%nav-btn {
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+}
+
+.close-nav {
+    @extend %nav-btn;
+    font-size: var(--close-fz, 5rem);
+    color: var(--close-clr, var(--clr-primary-400));
+}
+
+.open-nav {
+    @extend %nav-btn;
+    font-size: var(--open-nav-fz, 2rem);
+    color: var(--open-nav-clr, var(--clr-primary-400));
+}

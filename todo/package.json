@@ -1,0 +1,24 @@
+{
+  "name": "boilerplate",
+  "version": "1.0.0",
+  "description": "",
+  "main": "input.js",
+  "scripts": {
+    "start": "concurrently \"sass src/sass/main.scss public/css/styles.css --watch\" \"cross-env MODE=development webpack serve --liveReload\"",
+    "build": "concurrently \"sass src/sass/main.scss public/css/styles.css\" \"cross-env MODE=production webpack\""
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.14.0",
+    "@babel/preset-env": "^7.14.0",
+    "babel-loader": "^8.2.2",
+    "concurrently": "^6.0.2",
+    "cross-env": "^7.0.3",
+    "sass": "^1.32.12",
+    "source-map-loader": "^2.0.1",
+    "webpack": "^5.36.2",
+    "webpack-cli": "^4.6.0",
+    "webpack-dev-server": "^3.1.1"
+  }
+}

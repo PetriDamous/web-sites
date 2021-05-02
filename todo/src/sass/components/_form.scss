@@ -1,0 +1,61 @@
+.form {
+    --flow-spacer: 2rem;
+
+    label {
+        display: block;
+        font-weight: var(--fw-700);
+        letter-spacing: 1px;
+        margin-bottom: .5em;
+    }
+    
+
+    &__user-info {
+        display: flex;
+        flex-direction: column;
+
+        & > * + * {
+            @include margins(1rem, 0, 0, 0);
+        }
+
+        & > * {
+            width: 100%;
+        }
+
+        input {
+            width: 100%;
+            padding: .5rem;
+            font-size: var(--fs-250);
+        }
+    }
+
+    &__message {
+        display: flex;
+        flex-direction: column;
+
+        & > * + * {
+            @include margins(1rem, 0, 0, 0);
+        }
+
+        textarea {
+            padding: .5rem;
+            width: 100%;
+            min-height: 6rem;
+            font-size: var(--fs-250);            
+        }
+
+        submit {
+            align-self: flex-end;
+        }
+    }
+
+    @include respond(58.9375em) {
+        &__user-info {
+            flex-direction: row;
+
+            & > * + * {
+                @include margins(0, 0, 0, 1rem);
+            }
+            
+        }
+    }
+}

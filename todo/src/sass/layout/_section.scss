@@ -1,0 +1,7 @@
+section {
+    padding: 3.5rem 0;
+
+    @include respond(40em) {
+        padding: 5rem 0;
+    }
+}
