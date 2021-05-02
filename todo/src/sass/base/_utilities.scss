@@ -1,6 +1,6 @@
 .container {
-    max-width: 62.5rem;
-    width: 90%;
+    max-width: var(--container-max, 60rem);
+    width: var(--container-w, 90%);
     margin: 0 auto;
     @include padding($right-p: 1.5rem, $left-p: 1.5rem);
 }
@@ -15,6 +15,10 @@
 
 .m-xl-space {
     margin-top: 5rem !important;
+}
+
+.m-sm-space {
+    margin-top: 1rem !important;
 }
 
 .m-md-space {

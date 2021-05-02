@@ -3,13 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/styles.css">
     <script src="/scripts/bundle.js" defer></script>
     <title>Todo</title>
 </head>
 <body>
-    <h1>Boilerplate</h1>
+    <header class="site-header">
+        <div class="container">
+            <img src="/img/shiba.png" alt="" class="logo">
+            <h1 class="site-title">Todo</h1>
+        </div>
+    </header>
+    
+
+    <form class="form autocomplete="off"">
+        <div class="container">
+            <input type="text" placeholder="Title">
+            <input type="text" placeholder="Take a note...">
+            <div class="form__buttons m-sm-space">
+                <submit class="btn">Submit</submit>
+                <button class="btn">Close</button>
+            </div>
+        </div>
+    </form>    
+
+    <div id="root" class="notes container">
+        <div class="card flow-content" data-color="" data-id="">
+            <h3 class="card__title">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem, suscipit recusandae? Magnam ullam laudantium consectetur et distinctio commodi, nihil tempora quam quasi odio eligendi aliquam quas vitae, eaque quis debitis.</h3>
+            <div class="card__body">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit tenetur temporibus minima autem dignissimos sunt omnis eum fugit sint, consequatur totam beatae doloribus iusto, nemo quibusdam laboriosam eius dicta a.</div>
+            <div class="card__options">
+                <div class="card__color">
+                    <img src="/img/chromatic.png" alt="">
+                </div>
+                <button class="btn">Close</button>
+            </div>
+        </div>
+
+        <div class="card" data-color="" data-id="">
+            <h3 class="card__title">Walk puppy</h3>
+            <div class="card__body">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illo odio rem</div>
+            <div class="card__options">
+                <div class="card__color">
+                    <img src="/img/chromatic.png" alt="">
+                </div>
+                <button class="btn">Close</button>
+            </div>
+        </div>
+
+        <div class="card" data-color="" data-id="">
+            <h3 class="card__title"></h3>
+            <div class="card__body">Go fishing for a few hourse</div>
+            <div class="card__options">
+                <div class="card__color">
+                    <img src="/img/chromatic.png" alt="">
+                </div>
+                <button class="btn">Close</button>
+            </div>
+        </div>
+    </div>
     
 </body>
 </html>

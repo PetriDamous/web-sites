@@ -58,4 +58,7 @@ body {
   font-family: var(--ff-primary);
   font-size: var(--fs-300);
   font-weight: var(--fw-400);
+  // background-image: url(/img/wood.jpg);
+  background: linear-gradient(90deg, var(--clr-neutral-500), var(--clr-neutral-700));
+  color: var(--clr-neutral-100);
 }

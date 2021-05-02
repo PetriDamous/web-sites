@@ -1,24 +1,4 @@
-a {
-    @include font($font-w: var(--fw-700));
-    color: var(--clr-neutral-900);    
-}
- 
-h1,
-h2 {
-    font-family: var(--ff-primary);    
-    font-weight: var(--fw-700);
-}
-
-h1 {
-    font-size: var(--fs-700);
-}
-
-h2,
-.intro {
-    font-size: var(--fs-350);
-}
-
-nav a,
-.btn {
-    font-size: var(--fs-250);
+h1, 
+h3 {
+    letter-spacing: 1.5px;
 }
