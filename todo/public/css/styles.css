@@ -24,6 +24,8 @@
   --clr-primary-200: #F0E68C;
   --clr-primary-300: #ffff00;
   --clr-primary-400: #ffee00;
+  --modal-bg: rgb(0, 0, 0, .5);
+  --modal-form-bg: #36454F;
   --br: 1rem;
 }
 
@@ -153,8 +155,8 @@ h3 {
   width: var(--divider-length, 3.5em);
 }
 
-.open-navigation {
-  transform: translateX(0) !important;
+.open-modal {
+  transform: scale(1) !important;
 }
 
 .btn {
@@ -239,6 +241,24 @@ h3 {
 }
 .card__color {
   width: 2rem;
+}
+
+.modal {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 100%;
+  min-height: 100%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 2;
+  background-color: var(--modal-bg);
+  transform: scale(0);
+  transition: 250ms;
+}
+.modal form .container {
+  background-color: var(--modal-form-bg);
 }
 
 .site-header {

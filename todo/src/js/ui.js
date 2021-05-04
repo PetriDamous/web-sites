@@ -12,20 +12,38 @@ class UI {
                     <div class="card__color">
                         <img src="/img/chromatic.png" alt="color picker">
                     </div>
-                    <button class="btn">Delete</button>
+                    <button class="btn btn-delete">Delete</button>
                 </div>
             </div>`
         ).join('');
     }
 
-    static removeNote() {
-
+    static clearForm(title, body) {
+        title.value = '';
+        body.value = '';     
     }
 
-    static clearForm() {    
-        document.querySelector('#title').value = '';
-        document.querySelector('#body').value = '';        
+    static openModal({dataset: {id}}) {
+        const $modal = document.querySelector('.modal');
+        const $modelTitle = document.querySelector('.modal #title');
+        const $modelBody = document.querySelector('.modal #body');
+        
+        const notes = Storage.getNotes();
+        const note = notes.find(note => note.id === id);
+
+        const {title, body} = note;
+
+        $modal.dataset.id = id;
+        $modelTitle.value = title;
+        $modelBody.value = body;        
+
+        $modal.classList.add('open-modal');
     }
+
+    static closeModal() {
+        const $modal = document.querySelector('.modal');
+        $modal.classList.remove('open-modal');
+    } 
 }
 
 export default UI;
