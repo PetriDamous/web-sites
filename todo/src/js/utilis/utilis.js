@@ -1,3 +1,2 @@
-const generateId = () => {
-    
-}
+export const generateId = array => array.length;
+

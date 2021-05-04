@@ -10,9 +10,9 @@ class UI {
                 <div class="card__body">${note.body}</div>
                 <div class="card__options">
                     <div class="card__color">
-                        <img id="color" src="/img/chromatic.png" alt="color picker">
+                        <img src="/img/chromatic.png" alt="color picker">
                     </div>
-                    <button id="delete" class="btn">Delete</button>
+                    <button class="btn">Delete</button>
                 </div>
             </div>`
         ).join('');
@@ -22,8 +22,9 @@ class UI {
 
     }
 
-    static clearForm() {
-
+    static clearForm() {    
+        document.querySelector('#title').value = '';
+        document.querySelector('#body').value = '';        
     }
 }
 

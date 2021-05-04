@@ -5,6 +5,7 @@
   "main": "input.js",
   "scripts": {
     "start": "concurrently \"sass src/sass/main.scss public/css/styles.css\" \"cross-env MODE=development webpack serve --liveReload\"",
+    "watch": "webpack --watch",
     "build": "concurrently \"sass src/sass/main.scss public/css/styles.css\" \"cross-env MODE=production webpack\""
   },
   "author": "",

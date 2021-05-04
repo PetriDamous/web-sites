@@ -1,7 +1,7 @@
 const path = require('path');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
-console.log('dog', process.env.MODE)
+console.log('dog', typeof process.env.MODE)
 
 module.exports = {
     mode: process.env.MODE,
@@ -14,6 +14,7 @@ module.exports = {
     devServer: {
       contentBase: path.join(__dirname, 'public'),
       port: 3000,
+      compress: true,
       open: false,
       hot: true
     },
