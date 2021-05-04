@@ -4,7 +4,7 @@
   "description": "",
   "main": "input.js",
   "scripts": {
-    "start": "concurrently \"sass src/sass/main.scss public/css/styles.css --watch\" \"cross-env MODE=development webpack serve --liveReload\"",
+    "start": "concurrently \"sass src/sass/main.scss public/css/styles.css\" \"cross-env MODE=development webpack serve --liveReload\"",
     "build": "concurrently \"sass src/sass/main.scss public/css/styles.css\" \"cross-env MODE=production webpack\""
   },
   "author": "",
@@ -13,6 +13,7 @@
     "@babel/core": "^7.14.0",
     "@babel/preset-env": "^7.14.0",
     "babel-loader": "^8.2.2",
+    "clean-webpack-plugin": "^4.0.0-alpha.0",
     "concurrently": "^6.0.2",
     "cross-env": "^7.0.3",
     "sass": "^1.32.12",
