@@ -306,6 +306,21 @@ h3 {
   padding: 1.5rem;
 }
 
+.color-tooltip {
+  display: none;
+  flex-wrap: wrap;
+  gap: 5px;
+  width: 134px;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 0.875rem;
+}
+.color-tooltip__option {
+  height: 17px;
+  width: 17px;
+  background-color: #bbb;
+  border-radius: 50%;
+}
+
 .site-header {
   background-color: var(--clr-neutral-900);
 }

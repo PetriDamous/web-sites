@@ -71,6 +71,19 @@ class UI {
         $formBtns.style.display = 'none';
     }
 
+    static openCloseColor(note) {
+        const $colorToolTip = document.querySelector('.color-tooltip');
+        const noteCoords = note.getBoundingClientRect();
+        console.log(noteCoords)
+        const horizontal = noteCoords.left + window.scrollX;
+        const vertical = noteCoords.top + window.scrollY;
+
+        $colorToolTip.style.transform = `translate(${horizontal}px, ${vertical}px)`;
+        $colorToolTip.style.display = 'flex';
+
+        
+    }
+
     static openModal({dataset: {id}}) {
         const $modal = document.querySelector('.modal');
         const $modelTitle = document.querySelector('.modal #title');

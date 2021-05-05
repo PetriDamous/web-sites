@@ -69,8 +69,8 @@ document.querySelector('#notes-area').addEventListener('click', e => {
 
     if (elm.matches('.card__color img')) {
         console.log('change color')
-        console.log(elm.closest('.card'))
-        UI.displayMsg('update', 'success');
+        // console.log(elm.closest('.card').dataset.id)
+        UI.openCloseColor(elm.closest('.card'))
         UI.renderNotes();
         return;
     }
