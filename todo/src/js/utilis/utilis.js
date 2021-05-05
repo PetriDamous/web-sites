@@ -1,2 +1,2 @@
-export const generateId = array => array.length;
+export const noteValidation = (note) => note.trim() !== ""; 
 

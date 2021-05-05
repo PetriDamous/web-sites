@@ -49,3 +49,17 @@
 .open-modal {
     transform: scale(1) !important;    
 }
+
+.theme-danger {    
+    color: var(--txt-danger);
+    background-color: var(--bg-danger);
+    border: 2px solid var(--brd-danger);
+    border-radius: var(--br);
+}
+
+.theme-success {    
+    color: var(--txt-success);
+    background-color: var(--bg-success);
+    border: 2px solid var(--brd-success);
+    border-radius: var(--br);
+}

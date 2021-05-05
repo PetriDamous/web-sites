@@ -1,8 +1,6 @@
 .form {    
     --container-max: 40rem;
 
-
-
     .container {
         display: flex;
         flex-direction: column;
@@ -38,5 +36,15 @@
         & > * + * {
             @include margins($left-m: .5rem);
         }
+    }
+}
+
+#form-main {
+    #title {
+        display: none;
+    }
+
+    #form-buttons-main {
+        display: none;
     }
 }

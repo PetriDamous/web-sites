@@ -16,15 +16,19 @@
             <img src="/img/shiba.png" alt="" class="logo">
             <h1 class="site-title">Todo</h1>
         </div>
-    </header>    
+    </header>  
+    
+    <div class="container status-message">
+        <p id="message">placeholder</p>
+    </div>
 
-    <form id="form" class="form autocomplete="off"">
+    <form id="form-main" class="form autocomplete="off"">
         <div class="container">
             <input id="title" type="text" placeholder="Title">
-            <input id="body" type="text" placeholder="Take a note...">
-            <div class="form__buttons m-sm-space">
+            <input id="body" type="text" placeholder="Take a note..." required>
+            <div id="form-buttons-main" class="form__buttons m-sm-space">
                 <submit id="submit-main" class="btn">Submit</submit>
-                <button id="close" class="btn">Close</button>
+                <button id="close-main" class="btn">Close</button>
             </div>
         </div>
     </form>    
@@ -32,7 +36,7 @@
     <div id="notes-area" class="notes container"></div>
 
     <div class="modal" data-id="">
-        <form id="form" class="form autocomplete="off"">
+        <form id="form-modal" class="form autocomplete="off"">
             <div class="container">
                 <input id="title" type="text" placeholder="Title">
                 <input id="body" type="text" placeholder="Take a note...">
@@ -42,6 +46,19 @@
                 </div>
             </div>
         </form> 
+    </div>
+
+    <div class="color-tooltip">
+        <div class="color-option" id="default"></div>
+        <div class="color-option" id="red"></div>
+        <div class="color-option" id="orange"></div>
+        <div class="color-option" id="yellow"></div>
+        <div class="color-option" id="green"></div>
+        <div class="color-option" id="teal"></div>
+        <div class="color-option" id="blue"></div>
+        <div class="color-option" id="purple"></div>
+        <div class="color-option" id="pink"></div>
+        <div class="color-option" id="brown"></div>
     </div>
     
 </body>

@@ -1,8 +1,6 @@
 const path = require('path');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
-console.log('dog', typeof process.env.MODE)
-
 module.exports = {
     mode: process.env.MODE,
     entry: './src/app.js',

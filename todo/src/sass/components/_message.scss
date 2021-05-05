@@ -1,0 +1,8 @@
+.status-message {
+    --container-max: 40rem;
+    visibility: hidden;
+    
+    #message {
+        padding: 1.5rem;        
+    }
+}

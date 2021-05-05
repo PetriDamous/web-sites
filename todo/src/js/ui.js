@@ -1,5 +1,4 @@
 import Storage from './storage';
-
 class UI {    
     static renderNotes() {
         const notes = Storage.getNotes();
@@ -18,9 +17,58 @@ class UI {
         ).join('');
     }
 
+    static displayMsg(action, status) {
+        const $msg = document.querySelector('#message');
+
+        switch (action) {
+            case 'add':
+                $msg.textContent = 'Note added.';
+            break;
+            case 'delete':
+                $msg.textContent = 'Note deleted';
+            break;
+            case 'update':
+                $msg.textContent = 'Note updated';
+            break;
+            case 'validation':
+                $msg.textContent = 'Please write a note.';
+            break;
+        }
+
+        if (status === 'danger') {
+            $msg.classList.remove('theme-success');
+            $msg.classList.add('theme-danger');
+        } else {
+            $msg.classList.remove('theme-danger');
+            $msg.classList.add('theme-success');  
+        }
+
+        $msg.style.visibility = 'visible';
+
+        setTimeout(() => {
+            $msg.style.visibility = 'hidden';
+        }, 3000);
+    }
+
     static clearForm(title, body) {
         title.value = '';
         body.value = '';     
+    }
+
+    static openForm() {
+        const $formTitle = document.querySelector('#form-main #title');
+        const $formBtns = document.querySelector('#form-buttons-main');
+
+        $formTitle.style.display = 'block';
+        $formBtns.style.display = 'block';  
+    }
+
+    static closeForm() {
+        const $formTitle = document.querySelector('#form-main #title');
+        const $formBtns = document.querySelector('#form-buttons-main');
+
+        $formTitle.style.display = 'none';
+        $formBtns.style.display = 'none';
     }
 
     static openModal({dataset: {id}}) {

@@ -37,7 +37,6 @@ class Storage {
                 acc.push(curr);
                 return acc;
             }
-
         }, []);
 
         localStorage.setItem('notes', JSON.stringify(notes));
