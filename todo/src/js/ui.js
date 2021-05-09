@@ -1,9 +1,24 @@
 import Storage from './storage';
-class UI {    
-    static renderNotes() {
+import {getColorCoords} from './utilis/utilis';
+class UI {  
+    constructor() {
+        this.$notesArea = document.querySelector('#notes-area');
+        this.$msg = document.querySelector('#message');
+        this.$formTitle = document.querySelector('#form-main #title');
+        this.$formBtns = document.querySelector('#form-buttons-main');
+        this.$colorToolTip = document.querySelector('.color-tooltip');
+
+        this.$modal = document.querySelector('.modal');
+        this.$modelTitle = document.querySelector('.modal #title');
+        this.$modelTitle = document.querySelector('.modal #body');
+    }   
+
+    renderNotes() {
+        this.closeColor();
+        
         const notes = Storage.getNotes();
 
-        document.querySelector('#notes-area').innerHTML = notes.map((note) => 
+        this.$notesArea.innerHTML = notes.map((note) => 
             `<div class="card" data-color="${note.color}" data-id="${note.id}">
                 <h3 class="card__title">${note.title}</h3>
                 <div class="card__body">${note.body}</div>
@@ -17,93 +32,81 @@ class UI {
         ).join('');
     }
 
-    static displayMsg(action, status) {
-        const $msg = document.querySelector('#message');
+    displayMsg(action, status) {        
 
         switch (action) {
             case 'add':
-                $msg.textContent = 'Note added.';
+                this.$msg.textContent = 'Note added.';
             break;
             case 'delete':
-                $msg.textContent = 'Note deleted';
+                this.$msg.textContent = 'Note deleted';
             break;
             case 'update':
-                $msg.textContent = 'Note updated';
+                this.$msg.textContent = 'Note updated';
             break;
             case 'validation':
-                $msg.textContent = 'Please write a note.';
+                this.$msg.textContent = 'Please write a note.';
             break;
         }
 
         if (status === 'danger') {
-            $msg.classList.remove('theme-success');
-            $msg.classList.add('theme-danger');
+            this.$msg.classList.remove('theme-success');
+            this.$msg.classList.add('theme-danger');
         } else {
-            $msg.classList.remove('theme-danger');
-            $msg.classList.add('theme-success');  
+            this.$msg.classList.remove('theme-danger');
+            this.$msg.classList.add('theme-success');  
         }
 
-        $msg.style.visibility = 'visible';
+        this.$msg.style.visibility = 'visible';
 
         setTimeout(() => {
-            $msg.style.visibility = 'hidden';
+            this.$msg.style.visibility = 'hidden';
         }, 3000);
     }
 
-    static clearForm(title, body) {
+    clearForm(title, body) {
         title.value = '';
         body.value = '';     
     }
 
-    static openForm() {
-        const $formTitle = document.querySelector('#form-main #title');
-        const $formBtns = document.querySelector('#form-buttons-main');
-
-        $formTitle.style.display = 'block';
-        $formBtns.style.display = 'block';  
+    openForm() {
+        this.closeColor();
+        this.$formTitle.style.display = 'block';
+        this.$formBtns.style.display = 'block';  
     }
 
-    static closeForm() {
-        const $formTitle = document.querySelector('#form-main #title');
-        const $formBtns = document.querySelector('#form-buttons-main');
-
-        $formTitle.style.display = 'none';
-        $formBtns.style.display = 'none';
+    closeForm() {
+        this.$formTitle.style.display = 'none';
+        this.$formBtns.style.display = 'none';
     }
 
-    static openCloseColor(note) {
-        const $colorToolTip = document.querySelector('.color-tooltip');
-        const noteCoords = note.getBoundingClientRect();
-        console.log(noteCoords)
-        const horizontal = noteCoords.left + window.scrollX;
-        const vertical = noteCoords.top + window.scrollY;
+    openColor(closetColorBtn) { 
+        this.closeColor();
+        getColorCoords(closetColorBtn);
 
-        $colorToolTip.style.transform = `translate(${horizontal}px, ${vertical}px)`;
-        $colorToolTip.style.display = 'flex';
+        this.$colorToolTip.style.display = 'flex';
+    }   
 
-        
+    closeColor() {
+        this.$colorToolTip.style.display = 'none'; 
     }
 
-    static openModal({dataset: {id}}) {
-        const $modal = document.querySelector('.modal');
-        const $modelTitle = document.querySelector('.modal #title');
-        const $modelBody = document.querySelector('.modal #body');
-        
+    openModal({dataset: {id}}) { 
+        this.closeColor();       
         const notes = Storage.getNotes();
         const note = notes.find(note => note.id === id);
 
         const {title, body} = note;
 
-        $modal.dataset.id = id;
-        $modelTitle.value = title;
-        $modelBody.value = body;        
+        this.$modal.dataset.id = id;
+        this.$modelTitle.value = title;
+        this.$modelTitle.value = body;        
 
-        $modal.classList.add('open-modal');
+        this.$modal.classList.add('open-modal');
     }
 
-    static closeModal() {
-        const $modal = document.querySelector('.modal');
-        $modal.classList.remove('open-modal');
+    closeModal() {
+        this.$modal.classList.remove('open-modal');
     } 
 }
 

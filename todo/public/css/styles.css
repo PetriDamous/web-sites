@@ -309,6 +309,7 @@ h3 {
 .color-tooltip {
   display: none;
   flex-wrap: wrap;
+  position: fixed;
   gap: 5px;
   width: 134px;
   background-color: rgba(0, 0, 0, 0.7);
