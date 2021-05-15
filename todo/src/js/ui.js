@@ -18,6 +18,8 @@ class UI {
         
         const notes = Storage.getNotes();
 
+        console.log(notes)
+
         this.$notesArea.innerHTML = notes.map((note) => 
             `<div class="card" data-color="${note.color}" data-id="${note.id}">
                 <h3 class="card__title">${note.title}</h3>
