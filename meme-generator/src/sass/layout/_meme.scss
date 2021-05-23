@@ -1,0 +1,26 @@
+.meme {
+    @include padding($top-p: 2rem);
+    // position: relative;
+// 568 × 335 px
+
+    .container {
+        position: relative;
+        
+        img {
+            margin: 0 auto;
+        }
+    }
+
+
+    &__text {
+        position: absolute;
+
+        &-top {
+            color: blue;
+        }
+
+        &-bottom {
+            color: black;
+        }
+    }
+}

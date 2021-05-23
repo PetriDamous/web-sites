@@ -12,22 +12,17 @@
         transition-duration: 0.218s;
         transition-property:  box-shadow;
         transition-timing-function: ease-in;
+    }
 
-        & input {
-            max-width: 50rem;
-            width: 100%;
-            padding: .5em;
-            border: 0;
-            background-color: transparent;
-            border-radius: var(--br);
-            color: var(--clr-neutral-100);
-            outline: none;
-        }
-    
-        &:hover,
-        &:focus {   
-            box-shadow: 0 1px 2px 0 rgb(244, 245, 247), 0 1px 3px 1px rgb(225, 242, 255);
-        }
+    & input {
+        max-width: 50rem;
+        width: 100%;
+        padding: .5em;
+        border: 0;
+        border-bottom: 1px solid var(--clr-neutral-900);
+        background-color: transparent;
+        color: var(--clr-neutral-900);
+        outline: none;
     }
 
     &__buttons {
@@ -36,15 +31,5 @@
         & > * + * {
             @include margins($left-m: .5rem);
         }
-    }
-}
-
-#form-main {
-    #title {
-        display: none;
-    }
-
-    #form-buttons-main {
-        display: none;
     }
 }
