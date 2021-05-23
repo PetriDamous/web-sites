@@ -1,0 +1,14 @@
+.notes {
+    --minmax: 200px;
+    --container-w: none;
+    
+    padding: 1em;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(var(--minmax), 1fr));
+    grid-gap: 1em;
+
+    @include respond(26.75em) {
+        --container-w: 90%;
+        --minmax: 300px;
+    }
+}

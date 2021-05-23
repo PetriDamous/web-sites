@@ -1,0 +1,19 @@
+.modal {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 100%;
+    min-height: 100%;    
+    @include position($position: fixed, $top: 0, $right: 0);
+    z-index: 2;
+    background-color: var(--modal-bg);
+    transform: scale(0);
+    transition: 250ms;
+
+    form {
+        .container {
+            background-color: var(--modal-form-bg);
+        }
+        
+    }
+}

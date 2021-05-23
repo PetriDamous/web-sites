@@ -1,0 +1,3 @@
+body > * {
+    @include padding($top-p: 2rem, $bottom-p: 2rem);
+}
