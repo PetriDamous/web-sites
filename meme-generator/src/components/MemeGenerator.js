@@ -8,15 +8,14 @@ class MemeGenerator extends Component {
         super();
         this.state = {
             randomImg: "http://i.imgflip.com/1bij.jpg",
-            imgHeight: 335,
-            imgWidth: 568,
+            imgHeight: 320,
+            imgWidth: 536,
+            txtWidth: 0,
             memeImgs: [],
             topText: "Top Text",
             bottomText: "Bottom Text"
         }
     }
-
-
 
     componentDidMount() {
         const apiUrl = 'https://api.imgflip.com/get_memes';
@@ -26,9 +25,28 @@ class MemeGenerator extends Component {
             .then(data => {
                 const memeArray = data.data.memes;
                 this.setState({
-                    memeImgs: memeArray
+                    memeImgs: memeArray                    
                 })
             });
+
+            this.textControl();
+
+            window.addEventListener('resize', this.textControl);
+    }
+
+    componentWillUnmount() {
+        window.removeEventListener('resize', this.textControl);
+    }
+
+    textControl = () => {
+        const coords = document.querySelector('.meme img').getBoundingClientRect()
+
+        const width = +coords.width.toFixed(0);
+        // const height = +coords.height.toFixed(0);
+
+        this.setState({
+            txtWidth: width
+        });
     }
 
     roll = (min, max, floatFlag) => {
@@ -40,19 +58,20 @@ class MemeGenerator extends Component {
         const {memeImgs} = this.state;
 
         const meme = memeImgs[this.roll(0, memeImgs.length)];
-        console.log(meme)
 
         this.setState({
-            imgHeight: meme.height,
-            imgWidth: meme.height,
-            randomImg: meme.url
+            randomImg: meme.url,
+            imgWidth: meme.width,
+            imgHeight: meme.height
         });
+
+        // this.textControl();
     }
 
     handleSubmit = (e) => {
         e.preventDefault();
         this.randomMeme();
-
+        this.textControl();
     }
 
     handleChange = (e) => {        

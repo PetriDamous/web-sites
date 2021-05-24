@@ -1,34 +1,23 @@
 import React from 'react';
 
-function Meme({randomImg, topText, bottomText, memeImgs, imgHeight, imgWidth}) {
-    // const memeBackground = {
-    //     backgroundImage: `url(${randomImg})`,
-    //     // backgroundPosition: "center center",
-    //     backgroundRepeat: "no-repeat",
-    //     backgroundSize: "cover",
-    //     minHeight: 500,
-        
-    // }
-
-    // const memeImg = {
-    //     maxWidth: imgWidth;
-    // }
+function Meme({randomImg, topText, bottomText, txtWidth, imgHeight, imgWidth}) {
 
     const memeContainer = {
         maxWidth: imgWidth
     }
 
-    const topPos = {
-        top: `${imgHeight - 300}px`
+    const memeTxt = {
+        maxWidth: `${+(txtWidth / 2).toFixed(0)}px`
     }
 
+    console.log(memeTxt.maxWidth)
     return(
         <div className="meme">
             <div style={memeContainer}  className="container">
                 <img src={randomImg}/>
 
-                <p style={topPos} className="meme__text meme__text-top">{topText}</p>
-                <p className="meme__text meme__text-bottom">{bottomText}</p>
+                <p className="meme__text meme__text-top text-shadow">{topText}</p>
+                <p className="meme__text meme__text-bottom text-shadow">{bottomText}</p>
             </div>
 
         </div>

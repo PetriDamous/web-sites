@@ -1,5 +1,6 @@
 :root {
-  --ff-primary: 'Roboto', sans-serif;
+  --ff-primary: VT323, monospace;
+  --ff-secondary: 'Roboto', sans-serif;
 
   /* small screen font-sizes */
   --fs-200: 0.75rem;
@@ -17,6 +18,10 @@
   --fw-400: 400; // for this project
   --fw-700: 700; // for this project
 
+  // meme-text
+  --fs-meme: 1rem;
+  
+
   --clr-neutral-100: #fff;
   --clr-neutral-200: #eef1f6;
   --clr-neutral-300: #a9afbc;
@@ -28,6 +33,7 @@
   --clr-primary-200: #d8bfd8;
   --clr-primary-300: #7b68ee;
   --clr-primary-400: #6a5acd;
+  --clr-primary-800: #800080;
 
   --modal-bg: rgb(0, 0, 0, .5);
   --modal-form-bg: #36454F;
@@ -64,6 +70,10 @@
 //   }
 // }
 
-
+@include respond(40em) {
+  :root {
+    --fs-meme: 2rem;
+  }
+}
 
 // breakpoints
