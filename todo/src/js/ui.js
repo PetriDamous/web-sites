@@ -26,7 +26,7 @@ class UI {
                 <div class="card__body">${note.body}</div>
                 <div class="card__options">
                     <div class="card__color">
-                        <img src="/img/chromatic.png" alt="color picker">
+                        <img src="img/chromatic.png" alt="color picker">
                     </div>
                     <button class="btn btn-delete">Delete</button>
                 </div>
