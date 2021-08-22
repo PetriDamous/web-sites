@@ -10,7 +10,7 @@ class UI {
 
     this.$modal = document.querySelector(".modal");
     this.$modelTitle = document.querySelector(".modal #title");
-    this.$modelTitle = document.querySelector(".modal #body");
+    this.$modelBody = document.querySelector(".modal #body");
   }
 
   renderNotes() {
@@ -102,7 +102,7 @@ class UI {
 
     this.$modal.dataset.id = id;
     this.$modelTitle.value = title;
-    this.$modelTitle.value = body;
+    this.$modelBody.value = body;
 
     this.$modal.classList.add("open-modal");
   }
