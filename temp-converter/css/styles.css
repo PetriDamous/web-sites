@@ -1,0 +1,147 @@
+:root {
+    --color-g-1: #bb125f;
+    --color-g-2: #AF89D2;    
+    --color-bg: #07B2EA ;
+    --font-color:  #f6f0fa;
+    
+    --body-small: 1rem;
+    --h1-small: 1.25rem;
+    --h2-small: 1.3125rem;
+
+    --small: .625rem;
+
+    --body-large: 1.125rem;
+    --h1-large: 3.5rem;
+    --h2-large: 1.75rem; 
+
+    --primary-font: Anton, serif, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    background: url(../images/building.jpg) no-repeat center center fixed, linear-gradient(to left, var(--color-g-1), var(--color-g-2)); 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-color: var(--color-bg);
+    background-blend-mode: multiply;
+}
+
+body {
+    margin: 0;   
+    color: var(--font-color);
+    font-family: var(--primary-font);
+    font-size: var(--body-small);
+    text-align: center;     
+    letter-spacing: 3px;       
+    /* min-height: 100vh;        */    
+}
+
+h1 {
+    font-size: var(--h1-small);
+    text-transform: uppercase;
+    letter-spacing: 5px;
+}
+
+
+
+.wrapper {
+    width: 80%;
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 0 1em;    
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.header {
+    margin-bottom: 3em;    
+}
+
+.temp {
+    margin-bottom: 3em;    
+}
+
+.temp__label {
+    display: block;
+    margin-bottom: .75em;
+}
+
+.temp__field {
+    max-width: 400px;
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+    letter-spacing: 1px;    
+}
+
+.temp__field-input {
+    margin-bottom: 2em;    
+    border: 0;
+    border-radius: 5px;
+    padding: .25em;
+    
+}
+
+.temp__field-result {    
+    background: none;
+    border: none;
+    color: var(--font-color);    
+}
+
+.convert__select {
+    width: 90%;
+    padding: .25em;
+}
+
+.disable-select {
+    opacity: .8;
+    background: linear-gradient(to left, #0d3d75, #251FDE);
+    background-color: #DE851F;
+    background-blend-mode: multiply;
+}
+
+@media (min-width: 500px) {
+    body {
+        font-size: var(--body-large);
+    }
+
+    h1 {
+        font-size: var(--h1-large);
+    }
+}
+
+@media (min-width: 310px) {
+
+    .convert__select {
+        text-align: center;
+    }
+
+    .convert__options {
+        max-width: 400px;
+        width: 85%;
+        margin: 0 auto;
+    }
+}
+
+@media (min-width: 672px) {
+
+    .temp {
+        display: flex; 
+        justify-content: space-between;            
+    }
+
+    .temp__input {
+        width: 50%;
+    }
+
+    .temp__result {
+        width: 50%;
+    }
+}

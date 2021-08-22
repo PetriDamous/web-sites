@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="index.js" defer></script>
+    <title>Temperature Converter</title>
+</head>
+<body>
+
+    <div class="wrapper">
+        
+        <header class="header">
+            <h1>Temperature Converter</h1>
+        </header>
+        
+
+        <section class="temp">
+            <div class="temp__input">
+                <label id="input-label" class="temp__label temp__label-input" for="temp-field">Fahrenheit</label>
+                <input id="input-temp" class="temp__field temp__field-input" type="text" maxlength="10" required>
+            </div>
+
+            <div class="temp__result">
+                <div id="result-label" class="temp__label temp__label-result">Celsius</div>
+                <input id="result-temp" class="temp__field temp__field-result" type="text" disabled>
+            </div>
+        </section>
+    
+        <div class="convert">
+
+            <div class="convert__options">
+                <select name="convert temps" id="convert-temps" class="convert__select">                    
+                    <option value="f-to-c">Fahrenheit to Celsius</option>
+                    <option value="c-to-f">Celsius to Fahrenheit</option>
+                    <option value="f-to-k">Fahrenheit to Kelvin</option>
+                    <option value="c-to-k">Celsius to Kelvin</option>
+                    <option value="k-to-f">Kelvin to Fahrenheit</option>
+                    <option value="k-to-c">Kelvin to Celsisus</option>
+                </select>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>
