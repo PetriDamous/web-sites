@@ -18,8 +18,6 @@ class UI {
 
     const notes = Storage.getNotes();
 
-    console.log(notes);
-
     this.$notesArea.innerHTML = notes
       .map(
         (note) =>
