@@ -1,47 +1,60 @@
 .container {
-    max-width: 62.5rem;
-    width: 90%;
-    margin: 0 auto;
-    @include padding($right-p: 1.5rem, $left-p: 1.5rem);
+  max-width: 62.5rem;
+  width: 90%;
+  margin: 0 auto;
+  @include padding($right-p: 1.5rem, $left-p: 1.5rem);
 }
 
 .flow-content > * + * {
-    @include margins(var(--flow-spacer, 1em));
+  @include margins(var(--flow-spacer, 1em));
 }
 
 .split {
-    @include split();
+  @include split();
 }
 
 .m-xl-space {
-    margin-top: 5rem !important;
+  margin-top: 5rem !important;
 }
 
 .m-md-space {
-    margin-top: 3rem !important;
+  margin-top: 3rem !important;
 }
 
 .bold {
-    font-weight: var(--fw-700);
+  font-weight: var(--fw-700);
 }
 
 .txt-highlight {
-    color: var(--clr-primary-300);
+  color: var(--clr-primary-300);
 }
 
 .divider {
-    position: relative;
+  position: relative;
 
-    &::after {
-        content: "";
-        @include position($position: absolute, $top: var(--divider-top, 1.5em), $left: var(--divider-left, 50%));
+  &::after {
+    content: "";
+    @include position(
+      $position: absolute,
+      $top: var(--divider-top, 1.5em),
+      $left: var(--divider-left, 50%)
+    );
 
-        transform: translate(var(--divider-translate, -50%),0);
-        border-bottom: var(--divider-width, 2.5px) var(--divider-style, solid) var(--divider-color, --clr-primary-400);
-        width: var(--divider-length, 3.5em);
-    }
+    transform: translate(var(--divider-translate, -50%), 0);
+    border-bottom: var(--divider-width, 2.5px) var(--divider-style, solid)
+      var(--divider-color, --clr-primary-400);
+    width: var(--divider-length, 3.5em);
+  }
 }
 
 .open-navigation {
-    transform: translateX(0) !important;    
+  transform: translateX(0) !important;
+}
+
+.underline {
+  background-image: linear-gradient(#5fca66, #5fca66);
+  background-position: bottom center; /*Adjust the background-position to move the line*/
+  background-size: 80% 2px; /*Adjust the background size to control length and height*/
+  background-repeat: no-repeat;
+  padding-bottom: 4px; /* this can also control the position */
 }

@@ -94,11 +94,18 @@ h2 {
 
 h1 {
   font-size: var(--fs-700);
+  letter-spacing: 4px;
 }
 
 h2,
 .intro {
   font-size: var(--fs-350);
+}
+
+h2,
+p {
+  letter-spacing: 2px;
+  line-height: 1.5;
 }
 
 nav a,
@@ -168,6 +175,17 @@ nav a,
 
 .open-navigation {
   transform: translateX(0) !important;
+}
+
+.underline {
+  background-image: linear-gradient(#5fca66, #5fca66);
+  background-position: bottom center;
+  /*Adjust the background-position to move the line*/
+  background-size: 80% 2px;
+  /*Adjust the background size to control length and height*/
+  background-repeat: no-repeat;
+  padding-bottom: 4px;
+  /* this can also control the position */
 }
 
 .btn {
@@ -462,7 +480,7 @@ section {
 }
 .intro__cta h1 {
   font-size: var(--font-md);
-  line-height: 1.1;
+  line-height: 1.5;
 }
 @media (min-width: 30.125em) {
   .intro__cta h1 {
@@ -476,7 +494,7 @@ section {
 }
 
 .about {
-  --divider-top: 1.5em;
+  --divider-top: 5px;
   --divider-left: 50%;
   --divider-translate: -50%;
   --divider-width: 2.5px;
@@ -511,6 +529,9 @@ section {
   .about_image {
     align-self: flex-start;
   }
+}
+.about-info {
+  --divider-top: 10px;
 }
 .about-info > * + * {
   margin-top: 2rem;

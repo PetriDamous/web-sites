@@ -1,24 +1,31 @@
 a {
-    @include font($font-w: var(--fw-700));
-    color: var(--clr-neutral-900);    
+  @include font($font-w: var(--fw-700));
+  color: var(--clr-neutral-900);
 }
- 
+
 h1,
 h2 {
-    font-family: var(--ff-primary);    
-    font-weight: var(--fw-700);
+  font-family: var(--ff-primary);
+  font-weight: var(--fw-700);
 }
 
 h1 {
-    font-size: var(--fs-700);
+  font-size: var(--fs-700);
+  @include letter-spacing($letter-s: 4px);
 }
 
 h2,
 .intro {
-    font-size: var(--fs-350);
+  font-size: var(--fs-350);
+}
+
+h2,
+p {
+  @include letter-spacing($letter-s: 2px);
+  @include line-height($line-h: 1.5);
 }
 
 nav a,
 .btn {
-    font-size: var(--fs-250);
+  font-size: var(--fs-250);
 }

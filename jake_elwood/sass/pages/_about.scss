@@ -12,6 +12,13 @@
   }
 
   &-info {
+    --divider-top: 10px;
+
+    // h2 {
+    //   @include letter-spacing($letter-s: 2px);
+    //   @include line-height($line-h: 1.5);
+    // }
+
     & > * + * {
       @include margins($top-m: 2rem);
     }
