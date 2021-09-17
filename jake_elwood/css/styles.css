@@ -374,7 +374,6 @@ nav a,
   --close-clr: var(--clr-primary-400);
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
   align-items: center;
   width: 100%;
   min-height: 100vh;
@@ -395,6 +394,7 @@ nav a,
   font-size: var(--fs-600);
   color: white;
   text-decoration: none;
+  margin-top: 15vh;
 }
 .nav > a:hover, .nav > .btn:hover, .nav > a:focus, .nav > .btn:focus {
   color: var(--clr-primary-400);
