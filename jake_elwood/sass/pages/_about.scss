@@ -1,0 +1,19 @@
+.about {
+  &.split {
+    @include split($break-p: 56.875em);
+  }
+
+  &_image {
+    align-self: center;
+
+    @include respond($breakpoint: 56.875em) {
+      align-self: flex-start;
+    }
+  }
+
+  &-info {
+    & > * + * {
+      @include margins($top-m: 2rem);
+    }
+  }
+}

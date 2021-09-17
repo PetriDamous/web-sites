@@ -400,6 +400,11 @@ nav a,
   color: var(--clr-primary-400);
 }
 @media (min-width: 38.625em) {
+  .nav > a, .nav > .btn {
+    margin-top: 0;
+  }
+}
+@media (min-width: 38.625em) {
   .nav {
     flex-direction: row;
     min-height: min-content;
@@ -481,6 +486,36 @@ section {
   text-align: center;
 }
 
+.about.split {
+  display: flex;
+  flex-direction: column;
+}
+.about.split > * + * {
+  margin: 4rem 0 0;
+}
+.about.split > * {
+  flex-basis: 100%;
+}
+@media (min-width: 56.875em) {
+  .about.split {
+    flex-direction: row;
+  }
+  .about.split > * + * {
+    margin: 0 0 0 2.5rem;
+  }
+}
+.about_image {
+  align-self: center;
+}
+@media (min-width: 56.875em) {
+  .about_image {
+    align-self: flex-start;
+  }
+}
+.about-info > * + * {
+  margin-top: 2rem;
+}
+
 .contact {
   --divider-top: -0.5em;
   --divider-left: 0;
@@ -493,14 +528,6 @@ section {
 .contact .stack {
   position: relative;
 }
-.contact .stack::after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background-color: black;
-  transform: translate(-2rem, -2rem);
-}
 .contact .split {
   display: flex;
   flex-direction: column;
@@ -511,7 +538,7 @@ section {
 .contact .split > * {
   flex-basis: 100%;
 }
-@media (min-width: 40em) {
+@media (min-width: 56.625em) {
   .contact .split {
     flex-direction: row;
   }

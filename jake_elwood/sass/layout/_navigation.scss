@@ -38,6 +38,12 @@
   }
 
   @include respond(38.625em) {
+    & > a {
+      margin-top: 0;
+    }
+  }
+
+  @include respond(38.625em) {
     flex-direction: row;
     min-height: min-content;
     @include position();
