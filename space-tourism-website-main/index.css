@@ -1,3 +1,34 @@
+/* ------------------- */
+/* Custom properties   */
+/* ------------------- */
+
+:root {
+  /* colors */
+  --clr-dark: 230 35% 7%;
+  --clr-light: 231 77% 90%;
+  --clr-white: 0 0% 100%;
+
+  /* font-familes */
+  --ff-serif: "Bellefair", serif;
+  --ff-sans-cond: "Barlow Condensed", sans-serif;
+  --ff-sans-normal: "Barlow", sans-serif;
+
+  /* font-sizes */
+  --fs-200: 0.875rem; /* 14px */
+  --fs-300: 1rem; /* 16px */
+  --fs-400: 1.125rem; /* 18px */
+  --fs-500: 1.75rem; /* 28px */
+  --fs-600: 2rem; /* 32px */
+  --fs-700: 3.5rem; /* 56px */
+  --fs-800: 6.25rem; /* 100px */
+  --fs-900: 9.375rem; /* 150px */
+
+  /* letter-spacing */
+  --ls-1: 4.75px;
+  --ls-2: 2.7px;
+  --ls-3: 2.35px;
+}
+
 /* ------------------ */
 /* Rest */
 /* ------------------ */
@@ -38,6 +69,10 @@ html:focus-within {
 
 /* Set core body defaults */
 body {
+  font-family: var(--ff-sans-normal);
+  font-size: var(--fs-400);
+  color: hsl(var(--clr-white));
+  background-color: hsl(var(--clr-dark));
   min-height: 100vh;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
@@ -79,6 +114,16 @@ select {
   }
 }
 
+/* Sets default font-weight */
+h1,
+h2,
+h3,
+h4,
+h5,
+p {
+  font-weight: 400;
+}
+
 /* ------------------- */
 /* Utility classes     */
 /* ------------------- */
@@ -109,4 +154,99 @@ select {
   clip: rect(0, 0, 0, 0);
   white-space: nowrap; /* added line */
   border: 0;
+}
+
+/* colors */
+
+.bg-dark {
+  background-color: hsl(var(--clr-dark));
+}
+
+.bg-light {
+  background-color: hsl(var(--clr-light));
+}
+
+.bg-white {
+  background-color: hsl(var(--clr-white));
+}
+
+.text-dark {
+  color: hsl(var(--clr-dark));
+}
+
+.text-light {
+  color: hsl(var(--clr-light));
+}
+
+.text-white {
+  color: hsl(var(--clr-white));
+}
+
+/* Typography */
+
+.ff-serif {
+  font-family: var(--ff-serif);
+}
+
+.ff-sans-cond {
+  font-family: var(--ff-sans-cond);
+}
+
+.ff-sans-normal {
+  font-family: var(--ff-sans-normal);
+}
+
+.letter-spacing-1 {
+  letter-spacing: var(--ls-1);
+}
+
+.letter-spacing-2 {
+  letter-spacing: var(--ls-2);
+}
+
+.letter-spacing-3 {
+  letter-spacing: var(--ls-3);
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.fs-200 {
+  font-size: var(--fs-200);
+}
+
+.fs-300 {
+  font-size: var(--fs-300);
+}
+
+.fs-400 {
+  font-size: var(--fs-400);
+}
+
+.fs-500 {
+  font-size: var(--fs-500);
+}
+
+.fs-600 {
+  font-size: var(--fs-600);
+}
+
+.fs-700 {
+  font-size: var(--fs-700);
+}
+
+.fs-800 {
+  font-size: var(--fs-800);
+}
+
+.fs-900 {
+  font-size: var(--fs-900);
+}
+
+.fs-900,
+.fs-800,
+.fs-700,
+.fs-600 {
+  line-height: 1.1;
 }
