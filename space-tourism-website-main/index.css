@@ -266,7 +266,7 @@ p {
 
 /* Spacing */
 
-.flow *:where(:not(:first-child)) {
+.flow > *:where(:not(:first-child)) {
   margin-top: var(--flow-space, 1rem);
 }
 
@@ -305,6 +305,7 @@ p {
 
 .primary-navigation {
   --gap: 8rem;
+  --underline-gap: 2rem;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -320,6 +321,41 @@ p {
 }
 
 .underline-indicators > * {
-  border-bottom: 2px solid white;
-  padding-bottom: var(--underline-space, 1rem);
+  cursor: pointer;
+  border: none;
+  border-bottom: 0.2rem solid hsl(var(--clr-white) / 0);
+  padding: var(--underline-gap, 1rem) 0;
+}
+
+.underline-indicators > *:hover,
+.underline-indicators > *:focus {
+  border-color: hsl(var(--clr-white) / 0.5);
+}
+
+.underline-indicators > .active,
+.underline-indicators > [aria-selected="true"] {
+  border-color: hsl(var(--clr-white) / 1);
+}
+
+.tab-indicators > * {
+  --underline-gap: 0.5rem;
+  background-color: transparent;
+}
+
+.dot-indicators > * {
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 50%;
+  border: none;
+  aspect-ratio: 1;
+  background-color: hsl(var(--clr-white) / 0.25);
+}
+
+.dot-indicators > *:hover,
+.dot-indicators > *:focus {
+  background-color: hsl(var(--clr-white) / 0.5);
+}
+
+.dot-indicators > [aria-selected="true"] {
+  background-color: hsl(var(--clr-white) / 1);
 }

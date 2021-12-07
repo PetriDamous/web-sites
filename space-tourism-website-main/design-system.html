@@ -136,7 +136,7 @@
         <div>
           <nav>
             <ul class="primary-navigation underline-indicators flex">
-              <li>
+              <li class="active">
                 <a
                   class="ff-sans-cond fs-300 letter-spacing-2 text-white"
                   href="#"
@@ -171,10 +171,59 @@
             >
           </div>
 
-          <div style="margin-bottom: 50vh">
+          <div class="flow" style="margin-bottom: 50vh; --flow-space: 4rem">
             <!-- Tabs -->
+            <div class="tab-indicators underline-indicators flex">
+              <button
+                aria-selected="true"
+                class="
+                  uppercase
+                  ff-sans-cond
+                  fs-300
+                  letter-spacing-2
+                  text-white
+                "
+              >
+                Moon
+              </button>
+              <button
+                aria-selected="false"
+                class="
+                  uppercase
+                  ff-sans-cond
+                  fs-300
+                  letter-spacing-2
+                  text-white
+                "
+              >
+                Mars
+              </button>
+              <button
+                aria-selected="false"
+                class="
+                  uppercase
+                  ff-sans-cond
+                  fs-300
+                  letter-spacing-2
+                  text-white
+                "
+              >
+                Europa
+              </button>
+            </div>
 
             <!-- Dots -->
+            <div class="dot-indicators flex" style="margin-left: 3rem">
+              <button aria-selected="true">
+                <span class="sr-only">Tab 1</span>
+              </button>
+              <button aria-selected="false">
+                <span class="sr-only">Tab 2</span>
+              </button>
+              <button aria-selected="false">
+                <span class="sr-only">Tab 3</span>
+              </button>
+            </div>
 
             <!-- Numbers -->
           </div>
