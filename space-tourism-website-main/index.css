@@ -175,7 +175,7 @@ p {
 }
 
 .grid-container {
-  border: 1px solid lime;
+  /* border: 1px solid lime; */
   padding: 0 2em;
   display: grid;
 }
