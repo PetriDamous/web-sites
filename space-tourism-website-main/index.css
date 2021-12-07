@@ -14,19 +14,40 @@
   --ff-sans-normal: "Barlow", sans-serif;
 
   /* font-sizes */
-  --fs-200: 0.875rem; /* 14px */
-  --fs-300: 1rem; /* 16px */
-  --fs-400: 1.125rem; /* 18px */
-  --fs-500: 1.75rem; /* 28px */
-  --fs-600: 2rem; /* 32px */
-  --fs-700: 3.5rem; /* 56px */
-  --fs-800: 6.25rem; /* 100px */
-  --fs-900: 9.375rem; /* 150px */
+  --fs-900: clamp(5rem, 8vw + 1rem, 9.375rem);
+  --fs-800: 3.5rem;
+  --fs-700: 1.5rem;
+  --fs-600: 1rem;
+  --fs-500: 1.75rem;
+  --fs-400: 0.9375rem;
+  --fs-300: 1rem;
+  --fs-200: 0.875rem;
 
   /* letter-spacing */
   --ls-1: 4.75px;
   --ls-2: 2.7px;
   --ls-3: 2.35px;
+}
+
+/* Responsive fonts */
+
+@media (min-width: 35em) {
+  :root {
+    --fs-800: 5rem;
+    --fs-700: 2.5rem;
+    --fs-600: 1.5rem;
+    --fs-400: 1rem;
+  }
+}
+
+@media (min-width: 45em) {
+  :root {
+    /* font-sizes */
+    --fs-800: 6.25rem;
+    --fs-700: 3.5rem;
+    --fs-600: 2rem;
+    --fs-400: 1.125rem;
+  }
 }
 
 /* ------------------ */
@@ -76,6 +97,9 @@ body {
   min-height: 100vh;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
+
+  display: grid;
+  grid-template-rows: min-content 1fr;
 }
 
 /* A elements that don't have a class get default styles */
@@ -128,6 +152,8 @@ p {
 /* Utility classes     */
 /* ------------------- */
 
+/* Layout */
+
 .flex {
   display: flex;
   gap: var(--gap, 1rem);
@@ -138,10 +164,46 @@ p {
   gap: var(--gap, 1rem);
 }
 
+.d-block {
+  display: block;
+}
+
 .wrapper {
   padding-inline: var(--wrapper-padding-lr, 2em);
   margin-inline: var(--wrapper-margin-lr, auto);
   max-width: var(--wrapper-max-w, 80rem);
+}
+
+.grid-container {
+  border: 1px solid lime;
+  padding: 0 2em;
+  display: grid;
+}
+
+@media (min-width: 45em) {
+  .grid-container {
+    column-gap: var(--container-gap, 2rem);
+    grid-template-columns: minmax(2rem, 1fr) repeat(2, minmax(0, 40rem)) minmax(
+        2rem,
+        1fr
+      );
+  }
+
+  .grid-container > *:first-child {
+    grid-column: 2;
+    outline: 1px solid red;
+  }
+
+  .grid-container > *:last-child {
+    grid-column: 3;
+    outline: 1px solid yellow;
+  }
+}
+
+/* Spacing */
+
+.flow > *:where(:not(:first-child)) {
+  margin-top: var(--flow-space, 1rem);
 }
 
 .sr-only {
@@ -264,18 +326,12 @@ p {
   color: hsl(var(--clr-white) / 0.25);
 }
 
-/* Spacing */
-
-.flow > *:where(:not(:first-child)) {
-  margin-top: var(--flow-space, 1rem);
-}
-
 /* ------------------- */
 /* Components          */
 /* ------------------- */
 
 .large-button {
-  display: grid;
+  display: inline-grid;
   position: relative;
   z-index: 1;
   place-items: center;
@@ -361,7 +417,7 @@ p {
 }
 
 .number-indicators > * {
-  display: grid;
+  display: inline-grid;
   place-content: center;
   cursor: pointer;
   padding: 1em;
