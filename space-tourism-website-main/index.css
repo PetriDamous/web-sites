@@ -175,13 +175,15 @@ p {
 }
 
 .grid-container {
-  /* border: 1px solid lime; */
-  padding: 0 2em;
+  border: 1px solid lime;
+  text-align: center;
+  /* padding-inline: 2rem; */
   display: grid;
 }
 
 @media (min-width: 45em) {
   .grid-container {
+    text-align: left;
     column-gap: var(--container-gap, 2rem);
     grid-template-columns: minmax(2rem, 1fr) repeat(2, minmax(0, 40rem)) minmax(
         2rem,
