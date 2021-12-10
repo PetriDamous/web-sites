@@ -179,11 +179,7 @@ p {
   padding-inline: 1rem;
   display: grid;
   place-items: center;
-}
-
-.grid-container--home {
-  align-items: end;
-  padding-bottom: max(6rem, 20vh);
+  /* row-gap: 6rem; */
 }
 
 .grid-container * {
@@ -206,6 +202,11 @@ p {
 
   .grid-container > *:last-child {
     grid-column: 3;
+  }
+
+  .grid-container--home {
+    align-items: end;
+    padding-bottom: max(6rem, 20vh);
   }
 }
 
