@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 
-<html>
+<!DOCTYPE html>
+<html lang="en">
   <head>
-    <meta charset="utf-8" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bethany's Pie Shop</title>
     <!-- CSS only -->
@@ -22,90 +24,105 @@
       crossorigin="anonymous"
     ></script>
   </head>
-
   <body>
-    <main role="main">
-      <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-primary">
-        <div class="container">
-          <a class="navbar-brand" href="#"
-            ><img
-              class="align-top me-2"
-              src="./images/pie.png"
-              height="30"
-              width="30"
-            />Bethany's Pie Shop
-          </a>
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarNav"
-            aria-controls="navbarNav"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link" href="#">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Pies</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Order</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
+    <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-primary">
       <div class="container">
-        <div class="row">
-          <div class="col-md-4">
-            <img
-              width="175"
-              height="175"
-              src="images/products/christmasapplepiesmallsquare.jpg"
-            />
-            <h2>Christmas apple pie</h2>
-            <p>Happy holidays with this pie!</p>
-            <p>
-              <a class="btn btn-primary" href="applepie.html" role="button"
-                >View details</a
-              >
-            </p>
-          </div>
-          <div class="col-md-4">
-            <img
-              width="175"
-              height="175"
-              src="images/products/cranberrypiesmallsquare.jpg"
-            />
-            <h2>Cranberry pie</h2>
-            <p>A Christmas favorite</p>
-            <p>
-              <a class="btn btn-primary" href="applepie.html" role="button"
-                >View details</a
-              >
-            </p>
-          </div>
-          <div class="col-md-4">
-            <img
-              width="175"
-              height="175"
-              src="images/products/pumpkinpiesmallsquare.jpg"
-            />
-            <h2>Pumpkin pie</h2>
-            <p>Our Halloween favorite</p>
-            <p>
-              <a class="btn btn-primary" href="applepie.html" role="button"
-                >View details</a
-              >
-            </p>
-          </div>
+        <a class="navbar-brand" href="#"
+          ><img
+            class="align-top me-2"
+            src="./images/pie.png"
+            height="30"
+            width="30"
+          />Bethany's Pie Shop
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Pies</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Order</a>
+            </li>
+          </ul>
         </div>
+      </div>
+    </nav>
+    <main role="main">
+      <div class="container mt-4">
+        <nav class="breadcrum-divider" aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-item"><a href="#">Pies</a></li>
+            <li class="breadcrumb-item active" aria-current="page">
+              Seasonal pies
+            </li>
+          </ol>
+        </nav>
+        <section class="row gy-4">
+          <div class="col-sm-6 col-md-4">
+            <div class="card rounded shadow-sm">
+              <img
+                class="card-img-top"
+                src="images/products/christmasapplepie.jpg"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Christmas apple pie</h5>
+                <p class="card-text">Happy holidays with this pie!</p>
+              </div>
+              <div class="card-footer">
+                <a class="btn btn-primary" href="applepie.html" role="button"
+                  >View details</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4">
+            <div class="card rounded shadow-sm">
+              <img
+                class="card-img-top"
+                src="images/products/cranberrypie.jpg"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Cranberry pie</h5>
+                <p class="card-text">A Christmas favorite</p>
+              </div>
+              <div class="card-footer">
+                <a class="btn btn-primary" href="applepie.html" role="button"
+                  >View details</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-6 col-md-4">
+            <div class="card rounded shadow-sm">
+              <img class="card-img-top" src="images/products/pumpkinpie.jpg" />
+              <div class="card-body">
+                <h5 class="card-title">Pumpkin pie</h5>
+                <p class="card-text">Our Halloween favorite</p>
+              </div>
+              <div class="card-footer">
+                <a class="btn btn-primary" href="applepie.html" role="button"
+                  >View details</a
+                >
+              </div>
+            </div>
+          </div>
+        </section>
       </div>
     </main>
   </body>

@@ -8,3 +8,11 @@ body {
 .bg-primary {
   background-color: #a593c2 !important;
 }
+
+.breadcrum-divider {
+  --bs-breadcrumb-divider: ">";
+}
+
+.card-footer {
+  border-top: 0;
+}
