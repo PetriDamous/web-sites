@@ -4,3 +4,7 @@ body {
   background-image: url("../images/pattern.png");
   background-repeat: repeat;
 }
+
+.bg-primary {
+  background-color: #a593c2 !important;
+}
